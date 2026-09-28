@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Prominent EN/BM pill toggle. Included in every screen header. -->
+<com.google.android.material.button.MaterialButtonToggleGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/langToggle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/badge_bg"
+    android:padding="3dp"
+    app:selectionRequired="true"
+    app:singleSelection="true">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLangEn"
+        style="@style/Toggle.Apptrap.Lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lang_en" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLangBm"
+        style="@style/Toggle.Apptrap.Lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lang_bm" />
+</com.google.android.material.button.MaterialButtonToggleGroup>

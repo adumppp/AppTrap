@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Number bump when the risky/safe counters tick up during a scan (1.35 like the prototype). -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/overshoot">
+    <scale
+        android:fromXScale="1" android:toXScale="1.35"
+        android:fromYScale="1" android:toYScale="1.35"
+        android:pivotX="50%" android:pivotY="50%"
+        android:duration="130" />
+    <scale
+        android:startOffset="130"
+        android:fromXScale="1.35" android:toXScale="1"
+        android:fromYScale="1.35" android:toYScale="1"
+        android:pivotX="50%" android:pivotY="50%"
+        android:duration="190" />
+</set>

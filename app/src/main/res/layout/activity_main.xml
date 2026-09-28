@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MainActivity — landing + results in one scroll.
+  Three states share this layout, toggled with TransitionManager +
+  @transition/layout_changes so switching feels animated, not jumpy:
+    idle      -> heroIdle visible,  resultsGroup gone, emptyState gone
+    results   -> heroSummary visible, resultsGroup visible
+    all clear -> heroSummary visible, emptyState visible, recycler gone
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="96dp">
+
+        <LinearLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_gutter"
+            android:paddingTop="@dimen/space_2xl">
+
+            <!-- ===== Header: title + always-visible language toggle ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textAppearance="@style/Text.Apptrap.Label"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_greeting"
+                        android:textAppearance="@style/Text.Apptrap.Headline"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <include layout="@layout/view_language_toggle" />
+            </LinearLayout>
+
+            <!-- ===== Hero: idle state ===== -->
+            <FrameLayout
+                android:id="@+id/heroIdle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg"
+                android:background="@drawable/bg_hero_gradient"
+                android:paddingHorizontal="@dimen/space_xl"
+                android:paddingVertical="@dimen/space_2xl">
+
+                <!-- Corner glow decoration (prototype's blurred indigo orb) -->
+                <View
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="@dimen/space_sm"
+                    android:layout_marginEnd="@dimen/space_sm"
+                    android:background="@drawable/bg_hero_orb"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <!-- Shield inside a translucent chip; the whole chip breathes (prototype hero) -->
+                    <ImageView
+                        android:id="@+id/idleShield"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:background="@drawable/bg_shield_chip"
+                        android:contentDescription="@string/cd_shield"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_shield_check"
+                        app:tint="@color/indigo_300" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_lg"
+                        android:gravity="center"
+                        android:text="@string/home_idle_title"
+                        android:textAppearance="@style/Text.Apptrap.Headline"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_sm"
+                        android:gravity="center"
+                        android:text="@string/home_idle_body"
+                        android:textAppearance="@style/Text.Apptrap.Body"
+                        android:textColor="@color/indigo_200"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== Hero: summary state (after scan) ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/heroSummary"
+                style="@style/Card.Apptrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSummaryTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Apptrap.Headline"
+                        android:textSize="18sp"
+                        tools:text="We looked at 87 apps" />
+
+                    <TextView
+                        android:id="@+id/txtSummaryBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_xs"
+                        android:textAppearance="@style/Text.Apptrap.Body"
+                        android:textSize="12sp"
+                        tools:text="4 need a closer look · 83 look fine" />
+
+                    <!-- Distribution bar: weights set from Kotlin per risk bucket -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="@dimen/space_lg"
+                        android:orientation="horizontal"
+                        android:clipToOutline="true"
+                        android:background="@drawable/bg_dist_bar">
+
+                        <View android:id="@+id/barDanger"
+                            android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" android:background="?attr/riskDanger" />
+                        <View android:id="@+id/barWarn"
+                            android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" android:background="?attr/riskWarn" />
+                        <View android:id="@+id/barCaution"
+                            android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="2" android:background="?attr/riskCaution" />
+                        <View android:id="@+id/barSafe"
+                            android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="8" android:background="?attr/riskSafe" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== Results section ===== -->
+            <LinearLayout
+                android:id="@+id/resultsGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xl"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_section_attention"
+                            android:textAppearance="@style/Text.Apptrap.Title"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_xxs"
+                            android:text="@string/home_section_hint"
+                            android:textAppearance="@style/Text.Apptrap.Body"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Count pill ("3 apps"), set from Kotlin after each scan -->
+                    <TextView
+                        android:id="@+id/txtAttentionCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_md"
+                        android:background="@drawable/badge_danger"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:textAppearance="@style/Text.Apptrap.Label"
+                        android:textColor="?attr/riskDangerOnContainer"
+                        tools:text="3 apps" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerRisk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    android:layoutAnimation="@anim/layout_anim_fall_down"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_app_risk" />
+            </LinearLayout>
+
+            <!-- ===== Empty state: zero risky apps ===== -->
+            <include
+                android:id="@+id/emptyState"
+                layout="@layout/view_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:visibility="gone"
+                tools:ignore="IncludeLayoutParam" />
+
+            <!-- ===== Secondary actions ===== -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSafeApps"
+                style="@style/Button.Apptrap.Tonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/home_safe_apps"
+                app:icon="@drawable/ic_shield_check"
+                app:iconGravity="textStart"
+                app:iconTint="?attr/riskSafe" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExport"
+                    style="@style/Button.Apptrap.Text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/home_export"
+                    app:icon="@drawable/ic_download" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFeedback"
+                    style="@style/Button.Apptrap.Text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/home_feedback"
+                    app:icon="@drawable/ic_info" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Sticky primary action so the scan CTA is always reachable -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnScan"
+        style="@style/Button.Apptrap.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/screen_gutter"
+        android:text="@string/home_scan_cta"
+        app:icon="@drawable/ic_security"
+        app:iconTint="?attr/colorOnPrimary" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

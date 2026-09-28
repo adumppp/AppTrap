@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark mode overrides. Same attribute names, softer contrast. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Apptrap" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand — exact prototype values (indigo-500 #6366F1 on slate) -->
+        <item name="colorPrimary">@color/primary_night</item>
+        <item name="colorOnPrimary">@color/on_primary_night</item>
+        <item name="colorPrimaryContainer">@color/primary_container_night</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container_night</item>
+        <item name="colorSecondary">@color/secondary_night</item>
+        <item name="colorOnSecondary">@color/on_primary_night</item>
+        <item name="colorSecondaryContainer">@color/primary_container_night</item>
+        <item name="colorOnSecondaryContainer">@color/on_primary_container_night</item>
+
+        <item name="android:colorBackground">@color/bg_night</item>
+        <item name="colorSurface">@color/surface_night</item>
+        <item name="colorOnSurface">@color/slate_100</item>
+        <item name="colorSurfaceVariant">@color/surface_muted_night</item>
+        <item name="colorOnSurfaceVariant">@color/slate_400</item>
+        <item name="surfaceMuted">@color/surface_muted_night</item>
+        <item name="colorOutline">@color/outline_night</item>
+        <item name="colorOutlineVariant">@color/outline_night</item>
+
+        <item name="colorError">@color/red_600</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="riskSafe">@color/risk_safe_night</item>
+        <item name="riskSafeContainer">@color/risk_safe_container_night</item>
+        <item name="riskSafeOnContainer">@color/risk_safe_on_container_night</item>
+        <item name="riskCaution">@color/risk_caution_night</item>
+        <item name="riskCautionContainer">@color/risk_caution_container_night</item>
+        <item name="riskCautionOnContainer">@color/risk_caution_on_container_night</item>
+        <item name="riskWarn">@color/risk_warn_night</item>
+        <item name="riskWarnContainer">@color/risk_warn_container_night</item>
+        <item name="riskWarnOnContainer">@color/risk_warn_on_container_night</item>
+        <item name="riskDanger">@color/risk_danger_night</item>
+        <item name="riskDangerContainer">@color/risk_danger_container_night</item>
+        <item name="riskDangerOnContainer">@color/risk_danger_on_container_night</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+
+        <item name="textAppearanceDisplaySmall">@style/Text.Apptrap.Display</item>
+        <item name="textAppearanceHeadlineSmall">@style/Text.Apptrap.Headline</item>
+        <item name="textAppearanceTitleMedium">@style/Text.Apptrap.Title</item>
+        <item name="textAppearanceBodyMedium">@style/Text.Apptrap.Body</item>
+        <item name="textAppearanceLabelSmall">@style/Text.Apptrap.Label</item>
+
+        <item name="shapeAppearanceCornerSmall">@style/Shape.Apptrap.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/Shape.Apptrap.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/Shape.Apptrap.Large</item>
+
+        <item name="materialCardViewStyle">@style/Card.Apptrap</item>
+        <item name="materialButtonStyle">@style/Button.Apptrap.Primary</item>
+        <item name="materialAlertDialogTheme">@style/Dialog.Apptrap</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/Anim.Apptrap.Activity</item>
+    </style>
+
+</resources>

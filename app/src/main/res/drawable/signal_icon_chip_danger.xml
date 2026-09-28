@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Signal row icon chip: danger variant — tinted icon square -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/risk_danger" />
+    <corners android:radius="10dp" />
+    <alpha android:alpha="0.18" />
+</shape>

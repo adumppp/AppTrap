@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Translucent rounded chip that holds the breathing shield (home hero,
+  onboarding hero and the scan dialog) — prototype: bg-indigo-600/30 with a
+  border-indigo-400/40 hairline. Fixed colours: it only ever sits on the
+  deep-indigo hero gradient, in both light and dark mode.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="22dp" />
+    <solid android:color="@color/hero_chip_fill" />
+    <stroke android:width="1dp" android:color="@color/hero_chip_stroke" />
+</shape>

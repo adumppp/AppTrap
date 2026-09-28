@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Risky app row (RiskAdapter). Colour + label come from RiskLevel in Kotlin,
+  never hardcoded here. Left accent stripe carries the risk colour.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Card.Apptrap.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_md">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/riskStripe"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="?attr/riskDanger" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/space_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/appIcon"
+                    android:layout_width="@dimen/app_icon"
+                    android:layout_height="@dimen/app_icon"
+                    android:background="@drawable/icon_placeholder_bg"
+                    android:contentDescription="@string/cd_app_icon"
+                    android:padding="6dp"
+                    tools:src="@drawable/ic_security" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="@style/Text.Apptrap.Title"
+                        android:textSize="14sp"
+                        tools:text="Super Torch Light" />
+
+                    <TextView
+                        android:id="@+id/appRole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_xxs"
+                        android:background="@drawable/risk_chip_bg"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:textAppearance="@style/Text.Apptrap.Label"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="10sp"
+                        tools:text="Looks like a torch app" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/icon_md"
+                    android:layout_height="@dimen/icon_md"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_chevron_right" />
+            </LinearLayout>
+
+            <!-- Friendly risk badge + concern number -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/riskBadge"
+                    style="@style/Badge.Apptrap.Danger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Watches too much" />
+
+                <TextView
+                    android:id="@+id/riskScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_sm"
+                    android:fontFamily="monospace"
+                    android:textAppearance="@style/Text.Apptrap.Label"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="12sp"
+                    tools:text="42 / 100" />
+            </LinearLayout>
+
+            <!-- Top 2 reasons in plain words; full list on the detail screen -->
+            <TextView
+                android:id="@+id/signalsSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textAppearance="@style/Text.Apptrap.Body"
+                android:textColor="@color/slate_300"
+                android:textSize="12sp"
+                tools:text="Can read your contact list · Can listen through the microphone" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

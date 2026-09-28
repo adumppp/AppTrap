@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tailwind-style "active:scale-[0.98]" feel for Android.
+  Attach with android:stateListAnimator. Works on API 21+.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <set>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:valueTo="0.97"
+                android:duration="90"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:valueTo="0.97"
+                android:duration="90"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+        </set>
+    </item>
+    <item>
+        <set>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:valueTo="1.0"
+                android:duration="180"
+                android:interpolator="@android:interpolator/overshoot" />
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:valueTo="1.0"
+                android:duration="180"
+                android:interpolator="@android:interpolator/overshoot" />
+        </set>
+    </item>
+</selector>

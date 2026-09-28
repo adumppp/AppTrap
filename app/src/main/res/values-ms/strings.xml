@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Bahasa Malaysia. Bahasa mudah, elak istilah teknikal. -->
+<resources>
+    <string name="app_name">AppTrap</string>
+    <string name="detail_nav_title">Analisis Aplikasi</string>
+
+    <!-- ===== Tanya AI (lembaran sembang di skrin butiran) ===== -->
+
+    <string name="onb_title">Lihat aplikasi yang minta terlalu banyak</string>
+    <string name="onb_sub">AppTrap memeriksa aplikasi dalam telefon anda dan beritahu, dalam bahasa mudah, mana yang minta lebih daripada keperluannya.</string>
+    <string name="onb_point_1_title">Tiada apa keluar dari telefon</string>
+    <string name="onb_point_1_body">Pemeriksaan berlaku di sini sahaja. Kami tidak muat naik apa-apa.</string>
+    <string name="onb_point_2_title">Ambil masa kira-kira seminit</string>
+    <string name="onb_point_2_body">Anda boleh terus guna telefon sementara kami periksa.</string>
+    <string name="onb_point_3_title">Anda yang buat keputusan</string>
+    <string name="onb_point_3_body">Kami hanya jelaskan. Buang aplikasi atau tidak, terpulang kepada anda.</string>
+    <string name="onb_cta">Mula periksa</string>
+    <string name="onb_skip">Nanti dulu</string>
+
+    <string name="home_greeting">Pemeriksaan telefon anda</string>
+    <string name="home_idle_title">Bila-bila anda sedia</string>
+    <string name="home_idle_body">Tekan di bawah dan kami akan periksa semua aplikasi dalam telefon ini.</string>
+    <string name="home_scan_cta">Periksa aplikasi saya</string>
+    <string name="home_rescan_cta">Periksa semula</string>
+    <string name="home_summary_title">Kami periksa %1$d aplikasi</string>
+    <string name="home_summary_body">%1$d perlu diperhatikan Â· %2$d nampak okey</string>
+    <string name="home_section_attention">Patut diperhatikan</string>
+    <string name="home_section_hint">Disusun ikut berapa banyak yang diminta. Tekan mana-mana aplikasi untuk tahu sebabnya.</string>
+    <string name="home_safe_apps">Aplikasi yang nampak okey</string>
+    <string name="home_export">Simpan salinan</string>
+    <string name="home_feedback">Beri pendapat anda</string>
+    <string name="lang_hint">Bahasa</string>
+
+    <string name="empty_title">Semua okey</string>
+    <string name="empty_body">Tiada aplikasi anda yang minta lebih daripada keperluan. Bagus.</string>
+    <string name="empty_cta">Lihat semua aplikasi yang diperiksa</string>
+
+    <string name="scan_title">Sedang periksa aplikasi andaâ€¦</string>
+    <string name="scan_sub">Biar terbuka sahaja. Tidak lama.</string>
+    <string name="scan_progress">%1$d daripada %2$d aplikasi</string>
+    <string name="scan_now_checking">Sedang periksa: %1$s</string>
+    <string name="scan_count_attention">Perlu perhatian</string>
+    <string name="scan_count_fine">Nampak okey</string>
+    <string name="scan_elapsed">%1$d:%2$02d berlalu</string>
+    <string name="scan_cancel">Berhenti</string>
+    <string name="scan_cancelled">Pemeriksaan dihentikan</string>
+    <string name="scan_in_progress">Pemeriksaan sedang berjalanâ€¦</string>
+
+    <string name="risk_consistent">Nampak okey</string>
+    <string name="risk_consistent_body">Aplikasi ini hanya minta perkara yang memang diperlukan.</string>
+    <string name="risk_overreach">Minta lebih sedikit</string>
+    <string name="risk_overreach_body">Aplikasi ini minta beberapa perkara yang mungkin tidak perlu. Biasanya tidak bahaya.</string>
+    <string name="risk_deceptive">Tak masuk akal</string>
+    <string name="risk_deceptive_body">Apa yang aplikasi ini minta tidak sepadan dengan tugasnya. Elok diperiksa.</string>
+    <string name="risk_spyware">Menjejaki anda secara agresif</string>
+    <string name="risk_spyware_body">Aplikasi ini boleh capai banyak perkara peribadi anda. Fikirkan untuk buang jika anda tidak percayakannya.</string>
+
+    <string name="detail_score_label">Tahap kebimbangan</string>
+    <string name="detail_score_of">daripada 100</string>
+    <string name="detail_role">Nampak macam aplikasi %1$s</string>
+    <string name="detail_confidence_high">Kami cukup pasti</string>
+    <string name="detail_confidence_medium">Agak pasti</string>
+    <string name="detail_confidence_low">Sekadar petunjuk</string>
+    <string name="detail_section_worrying">Apa yang buat kami ragu</string>
+    <string name="home_section_count">%1$d aplikasi</string>
+    <string name="detail_section_normal">Yang lain nampak biasa</string>
+    <string name="detail_normal_count">%1$d permintaan biasa</string>
+    <string name="detail_delete">Buang aplikasi ini</string>
+    <string name="detail_keep">Simpan sahaja</string>
+
+    <string name="delete_title">Buang %1$s?</string>
+    <string name="delete_body">Android akan minta anda sahkan di skrin seterusnya. Gambar, mesej dan aplikasi lain tidak terjejas. Anda boleh pasang semula dari Play Store bila-bila masa.</string>
+    <string name="delete_confirm">Ya, buang</string>
+    <string name="delete_cancel">Bukan sekarang</string>
+
+    <string name="safe_title">Aplikasi yang nampak okey</string>
+    <string name="safe_sub">%1$d aplikasi ini hanya minta apa yang perlu.</string>
+    <string name="safe_badge">Nampak okey</string>
+
+    <string name="fb_title">Bagaimana pengalaman anda?</string>
+    <string name="fb_sub">Dua soalan sahaja. Ia membantu kami jadikan ini lebih jelas.</string>
+    <string name="fb_q_clear">Adakah keputusan mudah difahami?</string>
+    <string name="fb_q_open">Ada apa-apa yang mengelirukan?</string>
+    <string name="fb_hint_open">Taip di siniâ€¦</string>
+    <string name="fb_submit">Hantar</string>
+    <string name="fb_thanks">Terima kasih banyak.</string>
+    <string name="fb_yes">Ya</string>
+    <string name="fb_no">Tidak</string>
+
+    <string name="exit_title">Nak keluar dah?</string>
+    <string name="exit_body">Ada 20 detik untuk beritahu kami pengalaman anda?</string>
+    <string name="exit_no">Keluar sahaja</string>
+    <string name="exit_cancel">Batal</string>
+    <string name="exit_dont_ask">Jangan tanya lagi</string>
+
+    <string name="perm_contacts">Boleh baca senarai kenalan anda</string>
+    <string name="perm_sms">Boleh baca dan hantar mesej</string>
+    <string name="perm_location">Boleh tahu di mana anda berada</string>
+    <string name="perm_camera">Boleh guna kamera</string>
+    <string name="perm_mic">Boleh dengar melalui mikrofon</string>
+    <string name="perm_call_log">Boleh lihat siapa anda telefon</string>
+    <string name="perm_phone">Boleh buat panggilan dan lihat nombor anda</string>
+    <string name="perm_storage">Boleh buka gambar dan fail anda</string>
+    <string name="perm_overlay">Boleh timbul di atas aplikasi lain</string>
+    <string name="perm_accessibility">Boleh lihat dan kawal apa yang anda tekan</string>
+    <string name="perm_install">Boleh pasang aplikasi lain</string>
+    <string name="perm_boot">Hidup sendiri apabila telefon dibuka</string>
+    <string name="perm_calendar">Boleh baca kalendar anda</string>
+    <string name="perm_notifications">Boleh baca pemberitahuan anda</string>
+    <string name="perm_internet">Boleh guna internet</string>
+    <string name="perm_generic">Minta: %1$s</string>
+
+    <string name="cd_app_icon">Ikon aplikasi</string>
+    <string name="cd_back">Kembali</string>
+    <string name="cd_shield">Perisai AppTrap</string>
+
+    <string name="row_role_hint">Ketik untuk lihat apa yang %1$s boleh capai</string>
+    <string name="row_score">%1$d / 100 kebimbangan</string>
+    <string name="signal_why_generic">Ini lebih daripada yang biasanya diperlukan oleh apl seperti ini.</string>
+    <string name="signal_why_normal">Ini biasa bagi fungsi apl ini.</string>
+
+    <string name="scan_error">Ralat pemeriksaan: %1$s</string>
+    <string name="nothing_to_export">Tiada untuk disimpan. Jalankan pemeriksaan dahulu.</string>
+    <string name="csv_exported">Salinan berjaya disimpan.</string>
+    <string name="export_failed">Simpan gagal: %1$s</string>
+    <string name="no_email_app">Tiada aplikasi e-mel ditemui â€” maklum balas disalin ke papan keratan.</string>
+    <string name="no_app_data">Tiada data aplikasi</string>
+</resources>

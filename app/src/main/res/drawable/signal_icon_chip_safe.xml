@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Signal row icon chip: safe variant -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/risk_safe" />
+    <corners android:radius="10dp" />
+    <alpha android:alpha="0.18" />
+</shape>

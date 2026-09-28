@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Soft corner glow behind the hero card (prototype: blurred indigo-500/10 orb
+  in the top-right corner). A radial fade gives the same halo effect without
+  runtime blur cost. Decorative only — never interactive.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="56dp"
+        android:startColor="@color/hero_orb_glow"
+        android:centerColor="@color/hero_orb_glow"
+        android:endColor="@color/hero_orb_fade" />
+</shape>

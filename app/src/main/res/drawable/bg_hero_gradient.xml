@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Indigo hero wash used on onboarding + home header card.
+  Deep "moody indigo" ramp straight from the polished prototype
+  (bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900) so the
+  white headline and translucent shield chip pop like the reference.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="34dp" />
+    <gradient
+        android:type="linear"
+        android:angle="135"
+        android:startColor="@color/hero_gradient_start"
+        android:centerColor="@color/hero_gradient_mid"
+        android:endColor="@color/hero_gradient_end" />
+</shape>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Apptrap design system — colour tokens ("Soft Indigo Shield").
+  NEVER hardcode #hex in layouts. Always reference these tokens (or the
+  Material attributes in themes.xml) so dark mode keeps working.
+-->
+<resources>
+
+    <!-- ============ Brand ramp (indigo) ============ -->
+    <color name="indigo_50">#EEF2FF</color>
+    <color name="indigo_100">#E0E7FF</color>
+    <color name="indigo_200">#C7D2FE</color>
+    <color name="indigo_300">#A5B4FC</color>
+    <color name="indigo_400">#818CF8</color>
+    <color name="indigo_500">#4F6CF7</color>
+    <color name="indigo_600">#4055D8</color>
+    <color name="indigo_700">#3342AE</color>
+    <color name="indigo_900">#1B1F3B</color>
+    <color name="indigo_950">#12152B</color>
+
+    <!-- ============ Neutrals ============ -->
+    <color name="white">#FFFFFF</color>
+    <color name="grey_25">#FAFBFF</color>
+    <color name="grey_50">#F4F6FB</color>
+    <color name="grey_100">#EAEDF5</color>
+    <color name="grey_200">#DDE1EC</color>
+    <color name="grey_400">#98A1B7</color>
+    <color name="grey_600">#5C6579</color>
+    <color name="grey_800">#2C3242</color>
+    <color name="ink">#141826</color>
+
+    <!-- ============ Risk scale (semantic) ============ -->
+    <!-- safe / consistent -->
+    <color name="risk_safe">#16A34A</color>
+    <color name="risk_safe_container">#E6F6EC</color>
+    <color name="risk_safe_on_container">#0E5B2C</color>
+    <!-- overreach (asking extra) -->
+    <color name="risk_caution">#F59E0B</color>
+    <color name="risk_caution_container">#FEF3DC</color>
+    <color name="risk_caution_on_container">#7A4A02</color>
+    <!-- deceptive (doesn't add up) -->
+    <color name="risk_warn">#F26430</color>
+    <color name="risk_warn_container">#FEEAE2</color>
+    <color name="risk_warn_on_container">#7C2A0C</color>
+    <!-- spyware-like (watching you) -->
+    <color name="risk_danger">#E03131</color>
+    <color name="risk_danger_container">#FDE7E7</color>
+    <color name="risk_danger_on_container">#7A1414</color>
+
+    <!-- Night risk variants moved next to the dark surfaces below. -->
+
+    <!-- ============ Surfaces (light) ============ -->
+    <color name="bg">#F7F8FC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_muted">#F1F3FA</color>
+    <color name="outline">#E2E6F0</color>
+    <color name="scrim_60">#99141826</color>
+
+    <!-- ============ Surfaces (dark) — exact prototype Tailwind slate ramp ============ -->
+    <color name="bg_night">#0F172A</color>
+    <color name="surface_night">#1E293B</color>
+    <color name="surface_muted_night">#1B2432</color>
+    <color name="outline_night">#334155</color>
+
+    <!-- ============ Night risk scale — exact prototype risk palette ============ -->
+    <color name="risk_safe_night">#10B981</color>
+    <color name="risk_safe_container_night">#064E3B</color>
+    <color name="risk_safe_on_container_night">#6EE7B7</color>
+    <color name="risk_caution_night">#EAB308</color>
+    <color name="risk_caution_container_night">#422006</color>
+    <color name="risk_caution_on_container_night">#FDE047</color>
+    <color name="risk_warn_night">#F97316</color>
+    <color name="risk_warn_container_night">#431407</color>
+    <color name="risk_warn_on_container_night">#FDBA74</color>
+    <color name="risk_danger_night">#EF4444</color>
+    <color name="risk_danger_container_night">#450A0A</color>
+    <color name="risk_danger_on_container_night">#FCA5A5</color>
+
+    <!-- ============ Night brand — exact prototype indigo/slate ============ -->
+    <color name="primary_night">#6366F1</color>
+    <color name="on_primary_night">#FFFFFF</color>
+    <color name="primary_container_night">#312E81</color>
+    <color name="on_primary_container_night">#C7D2FE</color>
+    <color name="secondary_night">#818CF8</color>
+    <color name="red_600">#DC2626</color>
+
+    <!-- ============ Prototype neutral ramp (slate) for direct refs ============ -->
+    <color name="slate_100">#F1F5F9</color>
+    <color name="slate_200">#E2E8F0</color>
+    <color name="slate_300">#CBD5E1</color>
+    <color name="slate_400">#94A3B8</color>
+    <color name="slate_500">#64748B</color>
+    <color name="slate_600">#475569</color>
+    <color name="slate_700">#334155</color>
+    <color name="slate_800">#1E293B</color>
+    <color name="slate_900">#0F172A</color>
+    <color name="slate_950">#020617</color>
+    <color name="dist_bar_stroke">#80334155</color>
+    <!-- ============ Hero "deep indigo" tokens (prototype: indigo-900 → indigo-950 → slate-900).
+         Fixed, not theme-switched: they only ever sit on the indigo hero card. ============ -->
+    <color name="hero_gradient_start">#312E81</color>
+    <color name="hero_gradient_mid">#1E1B4B</color>
+    <color name="hero_gradient_end">#0F172A</color>
+    <!-- Translucent chip that holds the breathing shield (indigo-600 @ 30% + indigo-400 @ 40%). -->
+    <color name="hero_chip_fill">#4D6366F1</color>
+    <color name="hero_chip_stroke">#66818CF8</color>
+    <!-- Soft corner glow behind the hero (indigo-400 @ 18% fading to transparent). -->
+    <color name="hero_orb_glow">#2E818CF8</color>
+    <color name="hero_orb_fade">#00818CF8</color>
+    <!-- Hairline border on the primary CTA (prototype: border-indigo-400/30). -->
+    <color name="btn_primary_stroke">#4D818CF8</color>
+
+</resources>

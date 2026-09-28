@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Apptrap theme. Light values live here, dark values in values-night/themes.xml.
+  Layouts should reference ?attr/colorPrimary, ?attr/colorSurface, ?attr/riskSafe ...
+  so both modes work with zero duplicated layouts.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Custom risk attributes so layouts stay theme-aware -->
+    <attr name="riskSafe" format="color" />
+    <attr name="riskSafeContainer" format="color" />
+    <attr name="riskSafeOnContainer" format="color" />
+    <attr name="riskCaution" format="color" />
+    <attr name="riskCautionContainer" format="color" />
+    <attr name="riskCautionOnContainer" format="color" />
+    <attr name="riskWarn" format="color" />
+    <attr name="riskWarnContainer" format="color" />
+    <attr name="riskWarnOnContainer" format="color" />
+    <attr name="riskDanger" format="color" />
+    <attr name="riskDangerContainer" format="color" />
+    <attr name="riskDangerOnContainer" format="color" />
+    <attr name="surfaceMuted" format="color" />
+
+    <style name="Theme.Apptrap" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand -->
+        <item name="colorPrimary">@color/indigo_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/indigo_50</item>
+        <item name="colorOnPrimaryContainer">@color/indigo_700</item>
+        <item name="colorSecondary">@color/indigo_400</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/indigo_100</item>
+        <item name="colorOnSecondaryContainer">@color/indigo_900</item>
+
+        <!-- Surfaces -->
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/surface_muted</item>
+        <item name="colorOnSurfaceVariant">@color/grey_600</item>
+        <item name="surfaceMuted">@color/surface_muted</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/grey_100</item>
+
+        <item name="colorError">@color/risk_danger</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Risk scale -->
+        <item name="riskSafe">@color/risk_safe</item>
+        <item name="riskSafeContainer">@color/risk_safe_container</item>
+        <item name="riskSafeOnContainer">@color/risk_safe_on_container</item>
+        <item name="riskCaution">@color/risk_caution</item>
+        <item name="riskCautionContainer">@color/risk_caution_container</item>
+        <item name="riskCautionOnContainer">@color/risk_caution_on_container</item>
+        <item name="riskWarn">@color/risk_warn</item>
+        <item name="riskWarnContainer">@color/risk_warn_container</item>
+        <item name="riskWarnOnContainer">@color/risk_warn_on_container</item>
+        <item name="riskDanger">@color/risk_danger</item>
+        <item name="riskDangerContainer">@color/risk_danger_container</item>
+        <item name="riskDangerOnContainer">@color/risk_danger_on_container</item>
+
+        <!-- System bars: edge-to-edge friendly, works on API 26+ -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+
+        <!-- Typography + shape + component defaults -->
+        <item name="textAppearanceDisplaySmall">@style/Text.Apptrap.Display</item>
+        <item name="textAppearanceHeadlineSmall">@style/Text.Apptrap.Headline</item>
+        <item name="textAppearanceTitleMedium">@style/Text.Apptrap.Title</item>
+        <item name="textAppearanceBodyMedium">@style/Text.Apptrap.Body</item>
+        <item name="textAppearanceLabelSmall">@style/Text.Apptrap.Label</item>
+
+        <item name="shapeAppearanceCornerSmall">@style/Shape.Apptrap.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/Shape.Apptrap.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/Shape.Apptrap.Large</item>
+
+        <item name="materialCardViewStyle">@style/Card.Apptrap</item>
+        <item name="materialButtonStyle">@style/Button.Apptrap.Primary</item>
+        <item name="materialAlertDialogTheme">@style/Dialog.Apptrap</item>
+
+        <!-- Motion: shared transitions between screens (API 26+ safe) -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/Anim.Apptrap.Activity</item>
+    </style>
+
+    <!-- Full-bleed onboarding: no light status bar because hero is indigo -->
+    <style name="Theme.Apptrap.Onboarding" parent="Theme.Apptrap">
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:windowBackground">@drawable/bg_hero_gradient</item>
+    </style>
+
+</resources>

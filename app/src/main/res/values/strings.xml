@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English copy. Plain language only: no "permission", "overlay", "package".
+  Bahasa Malaysia lives in values-ms/strings.xml.
+-->
+<resources>
+    <string name="app_name">AppTrap</string>
+
+    <!-- ===== Onboarding ===== -->
+    <string name="onb_title">See which apps ask for too much</string>
+    <string name="onb_sub">AppTrap checks the apps on your phone and tells you, in simple words, which ones ask for more than they need.</string>
+    <string name="onb_point_1_title">Nothing leaves your phone</string>
+    <string name="onb_point_1_body">The check happens right here. We never upload your apps or your data.</string>
+    <string name="onb_point_2_title">Takes about a minute</string>
+    <string name="onb_point_2_body">You can keep using your phone while we look.</string>
+    <string name="onb_point_3_title">You decide what to do</string>
+    <string name="onb_point_3_body">We only explain. Removing an app is always your choice.</string>
+    <string name="onb_cta">Start my check</string>
+    <string name="onb_skip">Maybe later</string>
+
+    <!-- ===== Home / results ===== -->
+    <string name="home_greeting">Your phone check</string>
+    <string name="home_idle_title">Ready when you are</string>
+    <string name="home_idle_body">Tap below and we\'ll look through the apps on this phone.</string>
+    <string name="home_scan_cta">Check my apps</string>
+    <string name="home_rescan_cta">Check again</string>
+    <string name="home_summary_title">We looked at %1$d apps</string>
+    <string name="home_summary_body">%1$d need a closer look Â· %2$d look fine</string>
+    <string name="home_section_attention">Worth a look</string>
+    <string name="home_section_hint">Sorted by how much they ask for. Tap any app to see why.</string>
+    <string name="home_safe_apps">Apps that look fine</string>
+    <string name="home_export">Save a copy</string>
+    <string name="home_feedback">Tell us what you think</string>
+    <string name="lang_en">EN</string>
+    <string name="lang_bm">BM</string>
+    <string name="lang_hint">Language</string>
+
+    <!-- ===== Empty state ===== -->
+    <string name="empty_title">All clear</string>
+    <string name="empty_body">None of your apps are asking for more than they need. Nice phone.</string>
+    <string name="empty_cta">See all apps we checked</string>
+
+    <!-- ===== Scanning dialog ===== -->
+    <string name="scan_title">Looking through your appsâ€¦</string>
+    <string name="scan_sub">You can leave this open. It won\'t take long.</string>
+    <string name="scan_progress">%1$d of %2$d apps</string>
+    <string name="scan_percent">%1$d%%</string>
+    <string name="scan_now_checking">Checking: %1$s</string>
+    <string name="scan_count_attention">Need a look</string>
+    <string name="scan_count_fine">Look fine</string>
+    <string name="scan_elapsed">%1$d:%2$02d elapsed</string>
+    <string name="scan_cancel">Stop</string>
+    <string name="scan_cancelled">Check stopped</string>
+    <string name="scan_in_progress">Check in progressâ€¦</string>
+
+    <!-- ===== Risk labels: friendly names for the technical ones ===== -->
+    <string name="risk_consistent">Looks fine</string>
+    <string name="risk_consistent_body">This app only asks for things it actually needs.</string>
+    <string name="risk_overreach">Asks for extra</string>
+    <string name="risk_overreach_body">This app asks for a few things it probably doesn\'t need. Usually not dangerous.</string>
+    <string name="risk_deceptive">Doesn\'t add up</string>
+    <string name="risk_deceptive_body">What this app asks for doesn\'t match what it\'s meant to do. Worth checking.</string>
+    <string name="risk_spyware">Tracks you aggressively</string>
+    <string name="risk_spyware_body">This app can reach a lot of your private things. Consider removing it if you don\'t trust it.</string>
+
+    <!-- ===== Detail screen ===== -->
+    <string name="detail_score_label">Concern level</string>
+    <string name="detail_score_of">out of 100</string>
+    <string name="detail_role">Looks like a %1$s app</string>
+    <string name="detail_confidence_high">We\'re quite sure</string>
+    <string name="detail_confidence_medium">Fairly sure</string>
+    <string name="detail_confidence_low">Just a hint</string>
+    <string name="detail_section_worrying">What made us pause</string>
+    <string name="home_section_count">%1$d apps</string>
+    <string name="detail_section_normal">Everything else looks normal</string>
+    <string name="detail_normal_count">%1$d normal requests</string>
+    <string name="detail_nav_title">App Analysis</string>
+    <string name="detail_delete">Remove this app</string>
+    <string name="detail_keep">Keep it</string>
+
+    <!-- ===== Ask AI (detail screen chat sheet) ===== -->
+
+    <!-- ===== Delete guidance ===== -->
+    <string name="delete_title">Remove %1$s?</string>
+    <string name="delete_body">Android will ask you to confirm on the next screen. Your photos, messages and other apps are not affected. You can always install it again from the Play Store.</string>
+    <string name="delete_confirm">Yes, remove it</string>
+    <string name="delete_cancel">Not now</string>
+
+    <!-- ===== Safe apps ===== -->
+    <string name="safe_title">Apps that look fine</string>
+    <string name="safe_sub">These %1$d apps only ask for what they need.</string>
+    <string name="safe_badge">Looks fine</string>
+
+    <!-- ===== Feedback ===== -->
+    <string name="fb_title">How was it?</string>
+    <string name="fb_sub">Two questions, then you\'re done. It helps us make this clearer for everyone.</string>
+    <string name="fb_q_clear">Was the result easy to understand?</string>
+    <string name="fb_q_open">Anything confusing or missing?</string>
+    <string name="fb_hint_open">Type hereâ€¦</string>
+    <string name="fb_submit">Send</string>
+    <string name="fb_thanks">Thank you. Really.</string>
+    <string name="fb_yes">Yes</string>
+    <string name="fb_no">No</string>
+
+    <!-- ===== Exit feedback dialog ===== -->
+    <string name="exit_title">Leaving already?</string>
+    <string name="exit_body">Got 20 seconds to tell us how it went?</string>
+    <string name="exit_no">Just exit</string>
+    <string name="exit_cancel">Cancel</string>
+    <string name="exit_dont_ask">Don\'t ask me again</string>
+
+    <!-- ===== Plain-language explanations for what apps ask for ===== -->
+    <string name="perm_contacts">Can read your contact list</string>
+    <string name="perm_sms">Can read and send text messages</string>
+    <string name="perm_location">Can see where you are</string>
+    <string name="perm_camera">Can use the camera</string>
+    <string name="perm_mic">Can listen through the microphone</string>
+    <string name="perm_call_log">Can see who you called</string>
+    <string name="perm_phone">Can make calls and see your number</string>
+    <string name="perm_storage">Can open your photos and files</string>
+    <string name="perm_overlay">Can draw on top of other apps</string>
+    <string name="perm_accessibility">Can see and control what you tap</string>
+    <string name="perm_install">Can install other apps</string>
+    <string name="perm_boot">Starts by itself when you turn on the phone</string>
+    <string name="perm_calendar">Can read your calendar</string>
+    <string name="perm_notifications">Can read your notifications</string>
+    <string name="perm_internet">Can use the internet</string>
+    <string name="perm_generic">Asks for: %1$s</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_app_icon">App icon</string>
+    <string name="cd_back">Go back</string>
+    <string name="cd_shield">AppTrap shield</string>
+
+    <!-- Row + signal copy (adapter layer) -->
+    <string name="row_role_hint">Tap to see what %1$s can reach</string>
+    <string name="row_score">%1$d / 100 concern</string>
+    <string name="signal_why_generic">This is more than an app like this usually needs.</string>
+    <string name="signal_why_normal">This is normal for what this app does.</string>
+
+    <!-- ===== Scan / export plumbing (used by the engine layer) ===== -->
+    <string name="scan_error">Check error: %1$s</string>
+    <string name="nothing_to_export">Nothing to save yet. Run a check first.</string>
+    <string name="csv_exported">Copy saved successfully.</string>
+    <string name="export_failed">Save failed: %1$s</string>
+    <string name="no_email_app">No email app found â€” feedback copied to clipboard.</string>
+    <string name="no_app_data">No app data</string>
+</resources>

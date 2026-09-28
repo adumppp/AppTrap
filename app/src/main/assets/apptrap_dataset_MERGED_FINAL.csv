@@ -1,0 +1,366 @@
+package_name,app_name,role,expected_permissions
+abdelrahman.wifianalyzerpro,WiFi Analyzer,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+ch.protonmail.android,Proton Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+cn.wps.moffice_eng,WPS Office,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+cn.wps.xiaomi.abroad.lite,Mi Doc Viewer,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+com.UCMobile.intl,UC Browser,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.actionlauncher.playstore,Action Launcher,System Tools,overlay|boot|network|contacts|location|storage|notifications
+com.adidas.runtastic,adidas Running,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.adobe.lrmobile,Adobe Lightroom,Media,boot|network|camera|storage|notifications|biometric|location
+com.adobe.reader,Adobe Acrobat,Productivity,boot|network|camera|storage|notifications|biometric|contacts
+com.adobe.scan.android,Adobe Scan,Productivity,boot|network|camera|storage|notifications|biometric|location
+com.affin.affinOnline,Affin Bank Online,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.agoda.mobile.consumer,Agoda,Maps / Navigation,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.airasia.mobile,AirAsia,Maps / Navigation,overlay|boot|network|location|mic|camera|contacts|storage|notifications|biometric
+com.airbnb.android,Airbnb,Maps / Navigation,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.aljazeera.english,Al Jazeera English,News,boot|network|camera|mic|location|storage|notifications
+com.alliancebank.allianceonline,Alliance Bank allianceonline,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.alltrails.alltrails,AllTrails,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.amazon.alexa,Amazon Alexa,Smart Home,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric
+com.amazon.avod.thirdpartyclient,Prime Video,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location
+com.amazon.clouddrive,Amazon Photos,Cloud Storage,boot|network|camera|storage|notifications|biometric|location
+com.amazon.mShop.android.shopping,Amazon Shopping,Finance,boot|network|contacts|camera|biometric|location|storage|notifications
+com.amazon.mp3,Amazon Music,Music Streaming,boot|network|mic|storage|notifications|biometric
+com.ambank.ambank,AmBank Mobile Banking,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.android.chrome,Google Chrome,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.android.settings,Android Settings,System Tools,boot|network|contacts|location|storage|notifications|biometric|camera|mic|call_log|sms|overlay
+com.android.vending,Google Play Store,System Tools,boot|network|storage|notifications|biometric|location
+com.android.vpndialogs,VPN,System Tools,boot|network|storage|notifications
+com.anghami,Anghami,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.aol.mobile.aolapp,AOL Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+com.apple.android.music,Apple Music,Music Streaming,boot|network|mic|storage|notifications|biometric|contacts
+com.arkt7.wondeployer,won deployer Setup,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.asana.app,Asana,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.aspiro.tidal,Tidal,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.astro.android.asNews,Astro Awani,News,boot|network|camera|mic|location|storage|notifications
+com.astro.android.astroGo,Astro Go,Video Streaming,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.authy.authy,Twilio Authy,Security / Privacy,boot|network|contacts|sms|camera|storage|notifications|biometric
+com.avast.android.mobilesecurity,Avast Mobile Security,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|location|contacts|mic
+com.azure.authenticator,Microsoft Authenticator,Security / Privacy,boot|network|biometric|storage|notifications|overlay
+com.bankrakyat.ibanking,Bank Rakyat i-Banking,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.basecamp.bc3android,Basecamp 3,Productivity,boot|network|camera|mic|contacts|storage|notifications
+com.bbc.news,BBC News,News,boot|network|camera|mic|location|storage|notifications
+com.bharian.android,Berita Harian,News,boot|network|camera|location|storage|notifications
+com.bigpay.android,BigPay,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.bitdefender.security,Bitdefender Mobile Security,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|location|contacts
+com.bitwarden.mobile,Bitwarden,Security / Privacy,boot|network|biometric|storage|notifications|overlay|camera|location
+com.block.juggle,Block Blast!,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.booking.android,Booking.com,Maps / Navigation,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.boost.wallet,Boost,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.booster.phonemaster,Phone Master,System Tools,boot|network|storage|notifications|overlay|location|contacts|mic|camera|sms|call_log
+com.box.android,Box,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts
+com.brave.browser,Brave Browser,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.bsn.bsnbizapp,BSN Mobile,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.camscanner,CamScanner,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location
+com.canva.editor,Canva,Media,boot|network|camera|mic|storage|notifications|biometric|location
+com.capcut.editor,CapCut,Media,boot|network|camera|mic|storage|notifications|location|contacts
+com.carsome.app,Carsome,Finance,boot|network|contacts|camera|mic|location|storage|notifications|biometric
+com.cbs.ca,Paramount+,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+com.cimb.clicks,CIMB Clicks,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.citymapper.app.release,Citymapper,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.cleanmaster.mguard,Clean Master,System Tools,boot|network|storage|notifications|overlay|location|camera|contacts|mic|call_log|sms
+com.cnn.mobile.android.phone,CNN,News,boot|network|camera|mic|location|storage|notifications
+com.crunchyroll.crunchyroid,Crunchyroll,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+com.cyberlink.youperfect,YouCam Perfect,Media,boot|network|camera|storage|notifications|biometric|location
+com.dashlane,Dashlane,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|contacts
+com.digi.myaccount,MyDigi,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.discord,Discord,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.disney.disneyplus,Disney+,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location
+com.dominos.dominos,Domino's Malaysia,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications|biometric
+com.dropbox.android,Dropbox,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.drupe.om,drupe- Phone Dialer & Contacts,System Tools,boot|network|contacts|call_log|storage|notifications|overlay|sms|location
+com.duckduckgo.mobile.android,DuckDuckGo Browser,Web Browsers,boot|network|camera|mic|location|storage|notifications
+com.duolingo,Duolingo,Productivity,boot|network|mic|camera|storage|notifications|biometric
+com.ea.game.pvzfree_row,Plants vs Zombies,Games,boot|network|storage|notifications|location
+com.easilydo.mail,Edison Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+com.ebay.mobile,eBay,Finance,boot|network|contacts|camera|biometric|location|storage|notifications
+com.estrongs.android.pop,ES File Explorer,System Tools,boot|network|storage|notifications|biometric|location|overlay|camera|contacts|mic
+com.evernote,Evernote,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location
+com.exatisdigital.klsentral,KL Sentral,Maps / Navigation,boot|network|location|contacts|storage|notifications
+com.expressvpn.vpn,ExpressVPN,Security / Privacy,boot|network|storage|notifications|biometric
+com.facebook.katana,Facebook,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.facebook.lite,Facebook Lite,Social Media,overlay|boot|network|contacts|mic|camera|location|storage|notifications|sms
+com.facebook.orca,Messenger,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.fave.favelah,Fave,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.firsttouchgames.dls7,DLS26,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.fitbit.FitbitMobile,Fitbit,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.foodpanda.android,foodpanda,Maps / Navigation,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.fsck.k9,K-9 Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+com.gaana,Gaana,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.gameloft.android.ANMP.GloftCRHM,Gangstar Vegas,Games,overlay|boot|network|mic|camera|storage|notifications|location|contacts|biometric
+com.garena.game.freefire,Free Fire,Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.garmin.android.apps.connectmobile,Garmin Connect,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.garmin.android.maps,Garmin Drive,Maps / Navigation,boot|network|location|mic|camera|storage|notifications
+com.google.android.apps.authenticator2,Google Authenticator,Security / Privacy,boot|network|camera|storage|notifications|biometric
+com.google.android.apps.classroom,Classroom,Productivity,network|storage|camera|location|overlay|boot|biometric|notifications|mic|contacts
+com.google.android.apps.docs,Google Docs,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location
+com.google.android.apps.docs.editors.docs,Google Docs Offline,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.google.android.apps.docs.editors.sheets,Google Sheets,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+com.google.android.apps.docs.editors.slides,Google Slides,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+com.google.android.apps.drive,Google Drive,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.google.android.apps.fitness,Google Fit,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.google.android.apps.gaming,Google Play Games,Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.google.android.apps.googleassistant,Google Assistant,Smart Home,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric
+com.google.android.apps.magazines,Google News,News,boot|network|camera|location|storage|notifications
+com.google.android.apps.maps,Google Maps,Maps / Navigation,overlay|boot|network|location|mic|camera|storage|notifications
+com.google.android.apps.messaging,Google Messages,System Tools,boot|network|contacts|mic|camera|location|storage|notifications|call_log|sms
+com.google.android.apps.nbu.files,Files by Google,System Tools,boot|network|storage|notifications|biometric|location
+com.google.android.apps.nbu.paisa.user,Google Pay,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.google.android.apps.nest.main,Nest,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|overlay
+com.google.android.apps.photos,Google Photos,Media,boot|network|camera|storage|notifications|biometric|location
+com.google.android.apps.podcasts,Google Podcasts,Music Streaming,boot|network|mic|storage|notifications|biometric|location
+com.google.android.apps.sheets,Google Sheets,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.google.android.apps.slides,Google Slides,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.google.android.apps.tachyon,Google Meet,Communications / Messaging,overlay|boot|network|contacts|mic|camera|location|storage|notifications|call_log
+com.google.android.apps.tasks,Google Tasks,Productivity,boot|network|contacts|storage|notifications
+com.google.android.apps.translate,Google Translate,Productivity,boot|network|mic|camera|storage|notifications|location
+com.google.android.apps.walletnfcrel,Google Wallet,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.google.android.apps.wellbeing,Digital Wellbeing,System Tools,boot|network|storage|notifications|location
+com.google.android.apps.youtube.music,YouTube Music,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.google.android.calendar,Google Calendar,Productivity,boot|network|contacts|storage|notifications|biometric|location|mic
+com.google.android.contactkeys,Android System Key Verifier,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.google.android.contacts,Google Contacts,System Tools,boot|network|contacts|camera|location|storage|notifications|call_log|sms
+com.google.android.dialer,Google Phone,System Tools,overlay|boot|network|contacts|mic|location|storage|notifications|call_log|sms
+com.google.android.earth,Google Earth,Maps / Navigation,boot|network|location|camera|storage|notifications|overlay
+com.google.android.gm,Gmail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+com.google.android.gms,Google Play Services,System Tools,boot|network|storage|notifications|biometric|location|contacts|camera|mic|sms|call_log|overlay
+com.google.android.inputmethod.latin,Gboard,Productivity,boot|network|contacts|storage|notifications|location|mic
+com.google.android.keep,Google Keep,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location
+com.google.android.launcher,Google Now Launcher,System Tools,overlay|boot|network|contacts|location|storage|notifications|biometric
+com.google.android.packageinstaller,Package Installer,System Tools,storage|notifications
+com.google.android.play.games,Google Play Games,Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.google.android.setupwizard,Setup Wizard,System Tools,boot|network|contacts|location|storage|biometric|camera|mic
+com.google.android.videos,Google TV,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location
+com.google.android.youtube,YouTube,Video Streaming,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.google.ar.core,Google Play Services for AR,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.gopro.smarty,GoPro,Media,boot|network|camera|mic|storage|notifications|location|biometric
+com.grab.grabpay,GrabPay,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.grab.passenger,Grab Passenger,Maps / Navigation,overlay|boot|network|location|mic|camera|contacts|sms|storage|notifications|biometric|call_log
+com.grabtaxi.passenger,Grab,Maps / Navigation,overlay|boot|network|location|mic|camera|contacts|sms|storage|notifications|biometric|call_log
+com.grammarly.android.keyboard,Grammarly Keyboard,Productivity,boot|network|contacts|storage|notifications
+com.halfbrick.fruitninjafree,Fruit Ninja,Games,boot|network|storage|notifications
+com.here.app.maps,HERE WeGo,Maps / Navigation,overlay|boot|network|location|mic|camera|storage|notifications
+com.hg.genshin,Genshin Impact,Games,boot|network|mic|camera|storage|notifications|location
+com.hlb.onlinebanking,Hong Leong Connect,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.hostelworld.app,Hostelworld,Maps / Navigation,boot|network|contacts|camera|biometric|location|storage|notifications
+com.hsbc.hsbcnm,HSBC Malaysia,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.huawei.health,Huawei Health,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.hulu.plus,Hulu,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+com.iflix.android,iFlix,Video Streaming,boot|network|camera|mic|storage|notifications|biometric|location
+com.imangi.templerun2,Temple Run 2,Games,boot|network|storage|notifications|location
+com.indosat.myim3,myIM3,Finance,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.inshot.app.android,InShot,Media,boot|network|camera|mic|storage|notifications|location
+com.instagram.android,Instagram,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.instagram.barcelona,Threads,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.instagram.lite,Instagram Lite,Social Media,boot|network|contacts|mic|camera|location|storage|notifications
+com.intsig.camcard,CamCard,Productivity,boot|network|camera|contacts|storage|notifications|biometric|location
+com.jio.media.jiobeats,JioSaavn,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.joeykrim.rootcheck,Root Checker Basic,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.jomrun.app,JomRun,Maps / Navigation,boot|network|location|camera|mic|contacts|storage|notifications|biometric
+com.joox.client.global.ww,JOOX Music,Music Streaming,boot|network|mic|storage|notifications|biometric|contacts|location
+com.kaspersky.android.antivirus,Kaspersky Mobile Antivirus,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|location|contacts|mic
+com.kfcmy.kfcmalaysia,KFC Malaysia,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications|biometric
+com.kiloo.subwaysurf,Subway Surfers,Games,boot|network|storage|notifications|location
+com.kiwibrowser.browser,Kiwi Browser,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.kodi,Kodi,Media,boot|network|mic|camera|storage|notifications|location
+com.lastpass.lpandroid,LastPass,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|contacts|mic
+com.lazada.android,Lazada,Finance,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.lazada.android.seller,Lazada Seller Center,Finance,boot|network|contacts|camera|mic|location|storage|notifications|biometric
+com.lemon.lvoverseas,CapCut,Media,network|storage|camera|location|overlay|boot|biometric|notifications|mic|contacts
+com.levelinfinite.sgame,Honor of Kings,Games,overlay|boot|network|mic|contacts|camera|storage|notifications|biometric|location
+com.linkedin.android,LinkedIn,Social Media,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric
+com.lowyat.apps.lowyatforum,Lowyat.NET,Finance,boot|network|camera|storage|notifications|location
+com.mapbox.navigation,Mapbox Navigation,Maps / Navigation,boot|network|location|camera|storage|notifications
+com.mapswithme.maps.pro,Maps.me,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.maxis.mymaxis,MyMaxis,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.maybank2u.life,Maybank2u MAE,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.mcafee.vsm_android_walmart,McAfee Mobile Security,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|location|contacts|mic
+com.mcdonalds.mobileapp,McDonald's,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications|biometric
+com.mediafire.android,MediaFire,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.meitu.beautyplusme,BeautyPlus,Media,boot|network|camera|storage|notifications|biometric|location
+com.merchantrade.android.merchantrade,Merchantrade Money,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.mi.android.globalFileexplorer,File Manager,System Tools,boot|network|storage|notifications|biometric|location
+com.mi.globalbrowser,Mi Browser,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.microsoft.authenticator,Microsoft Authenticator,Security / Privacy,boot|network|contacts|camera|storage|notifications|biometric
+com.microsoft.emmx,Microsoft Edge,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.microsoft.launcher,Microsoft Launcher,System Tools,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric|call_log|sms
+com.microsoft.office.excel,Microsoft Excel,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.microsoft.office.officelens,Microsoft Lens,Productivity,boot|network|camera|storage|notifications|biometric
+com.microsoft.office.onenote,OneNote,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+com.microsoft.office.outlook,Outlook,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location|mic
+com.microsoft.office.powerpoint,Microsoft PowerPoint,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.microsoft.office.word,Microsoft Word,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric
+com.microsoft.onenote,OneNote,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric
+com.microsoft.skydrive,OneDrive,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts
+com.microsoft.teams,Microsoft Teams,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications|call_log
+com.microsoft.todos,Microsoft To Do,Productivity,boot|network|contacts|storage|notifications|biometric
+com.miui.cleanmaster,MIUI Cleaner,System Tools,boot|network|storage|notifications|overlay|location
+com.miui.creation,Mi Canvas,Media,network|storage|camera|location|overlay|boot|biometric|notifications|mic|contacts
+com.miui.mediaeditor,Gallery Editor,Media,network|storage|camera|location|overlay|boot|biometric|notifications|mic|contacts
+com.mobile.legends,Mobile Legends: Bang Bang,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.mobilelegends.mi,Mobile Legends,Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.mojang.minecraftpe,Minecraft,Games,boot|network|mic|camera|storage|notifications|location|contacts
+com.moovitapp.android,Moovit,Maps / Navigation,boot|network|location|mic|camera|contacts|storage|notifications
+com.ms.squarehome2,Microsoft Launcher,System Tools,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric|call_log|sms
+com.mudah.my,Mudah.my,Finance,boot|network|contacts|camera|mic|location|storage|notifications
+com.mx.player,MX Player,Media,boot|network|camera|storage|notifications|location|overlay
+com.my.pos.mobi,myPOS,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.myrapid.rapid_kl,RapidKL,Maps / Navigation,boot|network|location|biometric|contacts|storage|notifications
+com.netflix.mediaclient,Netflix,Video Streaming,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.nextcloud.client,Nextcloud,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.nike.plusgps,Nike Run Club,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.nordcurrent.canteenhd,Cooking Fever,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.nordvpn.android,NordVPN,Security / Privacy,boot|network|storage|notifications|biometric
+com.notion.id,Notion,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric
+com.nstp.hmetro,Harian Metro,News,boot|network|camera|location|storage|notifications
+com.oasis.cleaner,Phone Cleaner,System Tools,boot|network|storage|notifications|overlay|location|camera|contacts|mic
+com.ocbc.app,OCBC Malaysia,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.offsec.nethunter.kex,NetHunter KeX,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.offsec.nethunter.store,NetHunter Store,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.offsec.nhterm,NetHunter Terminal,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.oldtown.oldtownwhitecoffee,OldTown White Coffee,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications
+com.onepassword.android,1Password,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|contacts
+com.opera.browser,Opera,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.opera.mini.native,Opera Mini,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications
+com.outfit7.mytalkingtomfree,My Talking Tom,Games,boot|network|storage|notifications|camera|mic
+com.pandora.android,Pandora,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.paypal.android.p2pmobile,PayPal,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.pcloud.pcloud,pCloud,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.peacocktv.peacockandroid,Peacock,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+com.philips.lighting.hue,Philips Hue,Smart Home,boot|network|camera|location|storage|notifications|biometric|mic
+com.picsart.studio,PicsArt,Media,boot|network|camera|mic|storage|notifications|biometric|location|contacts
+com.pinterest,Pinterest,Social Media,boot|network|camera|mic|location|storage|notifications
+com.pizzahut.mobile,Pizza Hut,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications|biometric
+com.plato.android,Plato,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.plexapp.android,Plex,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|contacts
+com.protonmail.protonmail,Proton Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric
+com.protonvpn.android,Proton VPN,Security / Privacy,boot|network|storage|notifications|biometric
+com.pubg.imobile,PUBG Mobile,Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.public_bank.pbebank,PBe – Public Bank Mobile,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.razorpay.payments.app,Razorpay,Finance,overlay|boot|network|biometric|sms|camera|storage|notifications
+com.reddit.frontpage,Reddit,Social Media,boot|network|mic|camera|location|storage|notifications
+com.rhbgroup.rhbmobile,RHB Mobile Banking,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.riot.mobile,League of Legends Wild Rift,Games,boot|network|mic|storage|notifications|location|contacts
+com.roblox.client,Roblox,Games,overlay|boot|network|mic|camera|storage|notifications|location|contacts
+com.rovio.baba,Angry Birds,Games,boot|network|storage|notifications|camera
+com.samsung.android.app.telephonyui,Samsung Phone,System Tools,overlay|boot|network|contacts|mic|camera|location|storage|notifications|call_log|sms
+com.samsung.android.contacts,Samsung Contacts,System Tools,boot|network|contacts|camera|location|storage|notifications|call_log|sms
+com.samsung.android.email.provider,Samsung Email,Email Apps,boot|network|contacts|camera|storage|notifications|biometric
+com.samsung.android.iot.smartthings,SmartThings,Smart Home,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric
+com.samsung.android.messaging,Samsung Messages,System Tools,boot|network|contacts|mic|camera|location|storage|notifications|call_log|sms
+com.samsung.android.spay,Samsung Pay,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.samsung.health,Samsung Health,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.sec.android.app.sbrowser,Samsung Internet,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.setel.SetelApp,Setel,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.shopee.my,Shopee,Finance,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.shopee.seller,Shopee Seller,Finance,boot|network|contacts|camera|mic|location|storage|notifications|biometric
+com.skype.raider,Skype,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications|call_log
+com.slack,Slack,Productivity,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.snapchat.android,Snapchat,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.soundcloud.android,SoundCloud,Music Streaming,boot|network|mic|storage|notifications|location
+com.spotify.music,Spotify,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.ss.android.ugc.trill,TikTok,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.standardchartered.scb.my,Standard Chartered Mobile,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.starbucks.cn,Starbucks,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications|biometric
+com.strava,Strava,Smart Home,boot|network|camera|mic|location|storage|notifications|biometric|contacts
+com.stripe.android.pushprovisioning,Stripe,Finance,boot|network|biometric|storage|notifications
+com.supercell.clashofclans,Clash of Clans,Games,boot|network|storage|notifications|location|contacts
+com.supercell.clashroyale,Clash Royale,Games,boot|network|storage|notifications|location|contacts
+com.sygic.aura,Sygic,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.symantec.mobilesecurity,Norton Mobile Security,Security / Privacy,overlay|boot|network|camera|storage|notifications|biometric|location|contacts|mic
+com.sync.android,Sync.com,Cloud Storage,boot|network|camera|storage|notifications|biometric
+com.tencent.ig,PUBG Mobile (SEA),Games,overlay|boot|network|contacts|mic|camera|storage|notifications|biometric|location
+com.tencent.mm,WeChat,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|call_log|location|sms|storage|notifications
+com.termux,Termux,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.teslacoilsw.launcher,Nova Launcher,System Tools,overlay|boot|network|contacts|location|storage|notifications|biometric
+com.thestar.android,The Star,News,boot|network|camera|location|storage|notifications
+com.ticktick.task,TickTick,Productivity,boot|network|contacts|mic|camera|storage|notifications|biometric
+com.tidal.android,TIDAL,Music Streaming,boot|network|mic|storage|notifications|biometric
+com.tmgo.android,TM Go,Finance,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.tng.ewallet,Touch 'n Go eWallet,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.todoist,Todoist,Productivity,boot|network|camera|mic|contacts|storage|notifications|biometric|location|overlay
+com.todoist.android.Todoist,Todoist,Productivity,boot|network|contacts|storage|notifications|biometric
+com.tomtom.gplay.navapp,TomTom GO,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.topjohnwu.magisk,Magisk,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+com.touchngo.android.ewallet,TNG Digital,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.tranzmate,Moovit,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+com.trello,Trello,Productivity,boot|network|camera|contacts|storage|notifications|biometric
+com.tresorit.mobile,Tresorit,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+com.truecaller,Truecaller,System Tools,overlay|boot|network|contacts|mic|camera|location|storage|notifications|call_log|sms|biometric
+com.trustd.mobile,Trustd MTD,Security / Privacy,boot|network|camera|storage|notifications|biometric|location|contacts
+com.tumblr,Tumblr,Social Media,boot|network|camera|mic|storage|notifications
+com.tunnelbear.android,TunnelBear VPN,Security / Privacy,boot|network|storage|notifications|biometric
+com.twitter.android,X (Twitter),Social Media,overlay|boot|network|contacts|mic|camera|location|storage|notifications
+com.unifi.mobile,unifi Mobile,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.uob.mighty,UOB TMRW Malaysia,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.urbanclap.urbanclap,Urban Company,Smart Home,boot|network|contacts|camera|mic|location|storage|notifications|biometric
+com.utusan.malaysia,Utusan Malaysia,News,boot|network|camera|location|storage|notifications
+com.valvesoftware.steamlink,Steam Link,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+com.viber.voip,Viber,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+com.viki.android,Viki,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+com.viu.android,Viu,Video Streaming,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.vivaldi.browser,Vivaldi,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.vlcforandroid.vlcdirectprofree,VLC Media Player,Media,boot|network|camera|storage|notifications|location
+com.vsco.cam,VSCO,Media,boot|network|camera|storage|notifications|location
+com.waze,Waze,Maps / Navigation,overlay|boot|network|location|mic|camera|contacts|storage|notifications
+com.wetv.vip.global,WeTV,Video Streaming,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+com.whatsapp,WhatsApp,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|call_log|location|sms|storage|notifications
+com.whatsapp.w4b,WhatsApp Business,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|call_log|location|sms|storage|notifications
+com.windscribe.vpn,Windscribe VPN,Security / Privacy,boot|network|storage|notifications|biometric
+com.xiaomi.smarthome,Xiaomi Home,Smart Home,overlay|boot|network|contacts|mic|camera|location|storage|notifications|biometric
+com.yahoo.mobile.client.android.mail,Yahoo Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+com.yahoo.news.mobile,Yahoo News,News,boot|network|camera|location|storage|notifications
+com.yes4g.myyes,MyYes,Finance,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+com.youtube.music,YouTube Music,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+com.zalora.android,ZALORA Fashion Shopping,Finance,boot|network|contacts|camera|biometric|location|storage|notifications
+com.zhiliaoapp.musically,TikTok,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+com.zoho.mail,Zoho Mail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric
+deezer.android.app,Deezer,Music Streaming,boot|network|mic|storage|notifications|biometric|location|contacts
+dev.animeplay.app,AnimePlay,Video Streaming,boot|network|mic|camera|storage|notifications|biometric|location|overlay
+eu.faircode.email,FairEmail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+flar2.devcheck,DevCheck,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+id.kuato.woahelper,WOA Helper,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+in.playsimple.wordsearch,Word Search,Games,network|storage|overlay|boot|mic|camera|notifications|location|contacts|biometric
+jp.naver.line.android,LINE,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+me.bluemail.mail,BlueMail,Email Apps,boot|network|contacts|camera|storage|notifications|biometric|location
+mega.privacy.android.app,MEGA,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+my.airselangor.com,Air Selangor,Finance,boot|network|camera|sms|biometric|storage|notifications|location
+my.beepit.beepitapp,beep,Maps / Navigation,boot|network|location|mic|camera|contacts|storage|notifications|biometric
+my.cimb.octo,CIMB OCTO,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.com.agrobank.mobile,AgroBank Mobile,Finance,overlay|boot|network|biometric|sms|camera|storage|notifications|location
+my.com.celcom.mycelcom,MyCelcom,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.com.ezlinksmobile.mylrt,MyRapid,Maps / Navigation,boot|network|location|biometric|contacts|sms|camera|storage|notifications
+my.com.malaysiakini.mkandroid,Malaysiakini,News,boot|network|camera|location|storage|notifications
+my.com.maybank2u.and,Maybank2u,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.com.myburgerlab.mbl,MyBurgerLab,Maps / Navigation,boot|network|location|camera|contacts|storage|notifications
+my.com.myeg.myeg,MyEG,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.com.telekom.mytmone,myTMone,Finance,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.com.tngdigital.ewallet,TNG eWallet,Finance,network|biometric|overlay|boot|storage|notifications|location|camera|contacts|sms|mic
+my.com.umobile.myumobile,My U Mobile,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.Malaysia.bprmplus,BPR/BSH,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.aplikasirakyat,MyGov,Security / Privacy,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.jata,e-Kehakiman,System Tools,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.jknselector,MySS MySejahtera,News,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.kkmmalaysia,MySPAD,System Tools,boot|network|location|camera|contacts|storage|notifications
+my.gov.malaysia.mygovid,MyDigiID,Security / Privacy,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.mymaya,Maya by Maybank,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.mymbpj.android,MBPJ Mobile App,System Tools,boot|network|location|camera|contacts|storage|notifications
+my.gov.malaysia.mysejahtera,MySejahtera,Security / Privacy,boot|network|biometric|contacts|sms|camera|storage|notifications|location|mic
+my.gov.malaysia.myspr,MyPR,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.gov.malaysia.spr.evote,SPR Mobile,Security / Privacy,boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.jpj.eserv,JPJ eServices,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.kwsp.akaun,i-Akaun KWSP,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.lhdn.mytax,MyTax LHDN,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+my.perkeso.mobile,PERKESO Connect,Finance,boot|network|biometric|sms|camera|storage|notifications|location
+my.tnb.asnb.myfunds,ASNB eServices,Finance,overlay|boot|network|biometric|contacts|sms|camera|storage|notifications|location
+net.osmand,OsmAnd,Maps / Navigation,boot|network|location|mic|camera|storage|notifications|overlay
+org.joinmastodon.android,Mastodon,Social Media,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications
+org.mozilla.firefox,Mozilla Firefox,Web Browsers,overlay|boot|network|camera|mic|location|storage|notifications|biometric
+org.mozilla.firefox_beta,Firefox Beta,Security / Privacy,boot|network|camera|mic|location|storage|notifications|biometric
+org.pocketworkstation.pckeyboard,Hacker's Keyboard,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+org.telegram.messenger,Telegram,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications|call_log
+org.thoughtcrime.securesms,Signal,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|sms|storage|notifications
+org.torproject.torbrowser,Tor Browser,Web Browsers,boot|network|camera|mic|location|storage|notifications
+ph.spacedesk.beta,spacedesk,System Tools,network|storage|overlay|boot|notifications|camera|location|biometric|contacts|mic
+ru.yandex.disk,Yandex Disk,Cloud Storage,boot|network|camera|storage|notifications|biometric|contacts|location
+us.zoom.videomeetings,Zoom,Communications / Messaging,overlay|boot|network|contacts|mic|camera|biometric|location|storage|notifications|call_log

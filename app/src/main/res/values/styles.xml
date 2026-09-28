@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Component styles = the "utility classes" of this design system.
+  Layouts should almost never set colours, radii or text sizes inline;
+  they pick a style from here instead.
+-->
+<resources>
+
+    <!-- ============ Shape ============ -->
+    <style name="Shape.Apptrap.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="Shape.Apptrap.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">18dp</item>
+    </style>
+    <style name="Shape.Apptrap.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">26dp</item>
+    </style>
+
+    <!-- ============ Typography ============ -->
+    <style name="Text.Apptrap.Display" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="Text.Apptrap.Headline" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="Text.Apptrap.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="Text.Apptrap.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Text.Apptrap.Label" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Text.Apptrap.Mono" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">monospace</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- ============ Cards ============ -->
+    <style name="Card.Apptrap" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">?attr/colorOutline</item>
+        <item name="rippleColor">@color/indigo_100</item>
+        <item name="contentPadding">@dimen/space_lg</item>
+    </style>
+
+    <style name="Card.Apptrap.Row" parent="Card.Apptrap">
+        <item name="cardCornerRadius">@dimen/radius_md</item>
+        <item name="contentPadding">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:stateListAnimator">@animator/press_lift</item>
+    </style>
+
+    <style name="Card.Apptrap.Hero" parent="Card.Apptrap">
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardCornerRadius">@dimen/radius_xl</item>
+    </style>
+
+    <!-- ============ Buttons ============ -->
+    <style name="Button.Apptrap.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">@dimen/space_xl</item>
+        <item name="android:paddingEnd">@dimen/space_xl</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="android:textAppearance">@style/Text.Apptrap.Title</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <!-- Hairline indigo border from the prototype (border-indigo-400/30)
+             that makes the CTA read as "lit up" against cards. -->
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/btn_primary_stroke</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">10dp</item>
+        <item name="android:stateListAnimator">@animator/press_lift</item>
+    </style>
+
+    <style name="Button.Apptrap.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="android:textAppearance">@style/Text.Apptrap.Title</item>
+        <item name="android:stateListAnimator">@animator/press_lift</item>
+    </style>
+
+    <style name="Button.Apptrap.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAppearance">@style/Text.Apptrap.Title</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Button.Apptrap.Danger" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <!-- Solid danger button (prototype: bg-red-600 + white text). Uses
+             colorError/colorOnError so night mode keeps contrast automatically. -->
+        <item name="backgroundTint">?attr/colorError</item>
+        <item name="android:textColor">?attr/colorOnError</item>
+        <item name="iconTint">?attr/colorOnError</item>
+        <item name="android:textAppearance">@style/Text.Apptrap.Title</item>
+        <item name="android:stateListAnimator">@animator/press_lift</item>
+    </style>
+
+    <style name="Button.Apptrap.Icon" parent="Widget.Material3.Button.IconButton">
+        <item name="iconTint">?attr/colorOnSurface</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- ============ Language toggle (now prominent, not hidden) ============ -->
+    <style name="Toggle.Apptrap.Lang" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="strokeColor">?attr/colorOutline</item>
+        <item name="android:textAppearance">@style/Text.Apptrap.Label</item>
+        <item name="android:textColor">@color/lang_toggle_text</item>
+        <item name="backgroundTint">@color/lang_toggle_bg</item>
+    </style>
+
+    <!-- ============ Badges / chips ============ -->
+    <style name="Badge.Apptrap" parent="">
+        <item name="android:textAppearance">@style/Text.Apptrap.Label</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Badge.Apptrap.Safe" parent="Badge.Apptrap">
+        <item name="android:background">@drawable/badge_safe</item>
+        <item name="android:textColor">?attr/riskSafeOnContainer</item>
+    </style>
+    <style name="Badge.Apptrap.Danger" parent="Badge.Apptrap">
+        <item name="android:background">@drawable/badge_danger</item>
+        <item name="android:textColor">?attr/riskDangerOnContainer</item>
+    </style>
+
+    <!-- ============ Dialogs ============ -->
+    <style name="Dialog.Apptrap" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/Shape.Apptrap.Large</item>
+        <item name="android:windowAnimationStyle">@style/Anim.Apptrap.Dialog</item>
+        <item name="backgroundTint">?attr/colorSurface</item>
+    </style>
+    <style name="Anim.Apptrap.Dialog" parent="">
+        <item name="android:windowEnterAnimation">@anim/dialog_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_pop_out</item>
+    </style>
+
+    <!-- Text input used in feedback screen -->
+    <style name="Input.Apptrap" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/radius_md</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_md</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_md</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_md</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+    </style>
+    <!-- ============ Screen transitions (fade-through, livelier than stock) ============ -->
+    <style name="Anim.Apptrap.Activity" parent="">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_exit</item>
+    </style>
+
+</resources>

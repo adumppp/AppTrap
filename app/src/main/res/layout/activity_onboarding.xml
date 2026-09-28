@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  NEW SCREEN: OnboardingActivity (Theme.Apptrap.Onboarding).
+  Solves "no onboarding" — explains in plain words what happens before scanning.
+  Show once; persist a flag in SharedPreferences.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_gutter"
+        android:paddingTop="@dimen/space_2xl"
+        android:paddingBottom="@dimen/space_xl">
+
+        <!-- Language chooser is the FIRST thing users see (fixes hidden toggle) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_sm"
+                android:text="@string/lang_hint"
+                android:textAppearance="@style/Text.Apptrap.Label"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <include layout="@layout/view_language_toggle" />
+        </LinearLayout>
+
+        <!-- Hero -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xl"
+            android:background="@drawable/bg_hero_gradient"
+            android:paddingHorizontal="@dimen/space_xl"
+            android:paddingVertical="@dimen/space_2xl">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <!-- start @anim/shield_breathe on this view in onResume() -->
+                <ImageView
+                    android:id="@+id/heroShield"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:background="@drawable/bg_shield_chip"
+                    android:contentDescription="@string/cd_shield"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_shield_check"
+                    app:tint="@color/indigo_200" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_lg"
+                    android:gravity="center"
+                    android:text="@string/onb_title"
+                    android:textAppearance="@style/Text.Apptrap.Display"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_md"
+                    android:gravity="center"
+                    android:text="@string/onb_sub"
+                    android:textAppearance="@style/Text.Apptrap.Body"
+                    android:textColor="@color/indigo_100" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Three reassurance points -->
+        <include
+            layout="@layout/view_onboarding_point"
+            android:id="@+id/point1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xl"
+            tools:ignore="IncludeLayoutParam" />
+
+        <include
+            layout="@layout/view_onboarding_point"
+            android:id="@+id/point2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md" />
+
+        <include
+            layout="@layout/view_onboarding_point"
+            android:id="@+id/point3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStart"
+            style="@style/Button.Apptrap.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xl"
+            android:text="@string/onb_cta"
+            app:icon="@drawable/ic_shield_check"
+            app:iconTint="?attr/colorOnPrimary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSkip"
+            style="@style/Button.Apptrap.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/onb_skip" />
+    </LinearLayout>
+</ScrollView>

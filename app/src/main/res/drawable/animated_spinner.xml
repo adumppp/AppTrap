@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Friendly scanning spinner: a soft indigo arc sweeping around a shield.
+  Use as the src of an ImageView plus @anim/rotate_forever, or as a
+  ProgressBar android:indeterminateDrawable (it self-rotates via animated-rotate).
+-->
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:pivotX="50%"
+    android:pivotY="50%">
+    <shape android:shape="ring"
+        android:innerRadiusRatio="3.1"
+        android:thicknessRatio="9"
+        android:useLevel="false">
+        <gradient
+            android:type="sweep"
+            android:startColor="#004F6CF7"
+            android:centerColor="#664F6CF7"
+            android:endColor="@color/indigo_500" />
+    </shape>
+</animated-rotate>

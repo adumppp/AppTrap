@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One "what it can do" row on the detail screen. Inflated into
+  suspiciousContainer / normalContainer. Plain-language text only.
+
+  The background tints to the risk severity (danger = red wash, warn =
+  orange wash, safe = emerald wash) so the screen reads at a glance —
+  matching the polished prototype design.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signalRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_sm"
+    android:background="@drawable/signal_card_danger"
+    android:gravity="top"
+    android:orientation="horizontal"
+    android:padding="@dimen/space_md">
+
+    <FrameLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/signal_icon_chip_danger">
+
+        <ImageView
+            android:id="@+id/signalIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_eye"
+            app:tint="?attr/riskDanger" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_md"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/signalTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Text.Apptrap.Title"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="Can listen through the microphone" />
+
+        <TextView
+            android:id="@+id/signalWhy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xxs"
+            android:textAppearance="@style/Text.Apptrap.Body"
+            android:textSize="11sp"
+            tools:text="A torch app has no reason to hear you." />
+    </LinearLayout>
+</LinearLayout>

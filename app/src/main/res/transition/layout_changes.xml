@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Set as android:layoutTransition / used with TransitionManager.beginDelayedTransition
+  so state swaps (idle -> scanning -> results -> empty) cross-fade instead of snapping.
+-->
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together"
+    android:duration="240">
+    <fade android:fadingMode="fade_out" />
+    <changeBounds />
+    <fade android:fadingMode="fade_in" />
+</transitionSet>

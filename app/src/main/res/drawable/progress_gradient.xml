@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Gradient progress bar for the scan dialog.
+  Use with a plain android.widget.ProgressBar (horizontal style):
+    android:progressDrawable="@drawable/progress_gradient"
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="999dp" />
+            <solid android:color="?attr/surfaceMuted" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip android:clipOrientation="horizontal" android:gravity="start">
+            <shape android:shape="rectangle">
+                <corners android:radius="999dp" />
+                <gradient
+                    android:type="linear"
+                    android:angle="0"
+                    android:startColor="@color/indigo_400"
+                    android:centerColor="@color/indigo_500"
+                    android:endColor="@color/indigo_600" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

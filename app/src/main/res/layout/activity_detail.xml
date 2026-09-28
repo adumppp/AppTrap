@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DetailActivity. Every technical name is translated to plain language by
+  PermissionPlainLanguage.kt before it reaches these views.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="150dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_gutter"
+            android:paddingTop="@dimen/space_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBack"
+                    style="@style/Button.Apptrap.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cd_back"
+                    app:icon="@drawable/ic_arrow_back" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_sm"
+                    android:layout_weight="1"
+                    android:text="@string/detail_nav_title"
+                    android:textAppearance="@style/Text.Apptrap.Title"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ===== App header ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/appIcon"
+                    android:layout_width="@dimen/app_icon_lg"
+                    android:layout_height="@dimen/app_icon_lg"
+                    android:background="@drawable/icon_placeholder_bg"
+                    android:contentDescription="@string/cd_app_icon"
+                    android:padding="10dp"
+                    android:transitionName="app_icon"
+                    tools:src="@drawable/ic_security" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_lg"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Apptrap.Headline"
+                        android:textSize="18sp"
+                        tools:text="Super Torch Light" />
+
+                    <TextView
+                        android:id="@+id/appRole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_xs"
+                        android:background="@drawable/risk_chip_bg"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:textAppearance="@style/Text.Apptrap.Label"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="Looks like a torch app" />
+
+                    <TextView
+                        android:id="@+id/packageName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_xs"
+                        android:textAppearance="@style/Text.Apptrap.Mono"
+                        android:textSize="11sp"
+                        tools:text="com.torch.super.light" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== Verdict card: score ring + friendly explanation ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/verdictCard"
+                style="@style/Card.Apptrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/score_ring"
+                        android:layout_height="@dimen/score_ring"
+                        android:background="@drawable/score_circle_bg">
+
+                        <!-- animate setProgressCompat(score, true) for the sweep-in -->
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/scoreRing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:indeterminate="false"
+                            app:indicatorColor="?attr/riskDanger"
+                            app:indicatorInset="0dp"
+                            app:indicatorSize="@dimen/score_ring"
+                            app:trackColor="?attr/colorOutline"
+                            app:trackCornerRadius="8dp"
+                            app:trackThickness="10dp"
+                            tools:progress="42" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/scoreValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Text.Apptrap.Display"
+                                android:textSize="24sp"
+                                tools:text="42" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/detail_score_of"
+                                android:textAppearance="@style/Text.Apptrap.Body"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_lg"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/detail_score_label"
+                            android:textAppearance="@style/Text.Apptrap.Label"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/riskBadge"
+                            style="@style/Badge.Apptrap.Danger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_xs"
+                            tools:text="Watches too much" />
+
+                        <TextView
+                            android:id="@+id/riskExplainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_sm"
+                            android:textAppearance="@style/Text.Apptrap.Body"
+                            tools:text="This app can reach a lot of your private things." />
+
+                        <TextView
+                            android:id="@+id/confidenceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_sm"
+                            android:background="@drawable/risk_chip_bg"
+                            android:drawablePadding="6dp"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:textAppearance="@style/Text.Apptrap.Label"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            app:drawableStartCompat="@drawable/ic_info"
+                            tools:text="We're quite sure" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== What made us pause ===== -->
+            <TextView
+                android:id="@+id/worryHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/detail_section_worrying"
+                android:textAppearance="@style/Text.Apptrap.Label"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <LinearLayout
+                android:id="@+id/suspiciousContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                tools:ignore="UselessLeaf" />
+
+            <!-- ===== Normal stuff, collapsed by default ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/normalCard"
+                style="@style/Card.Apptrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/normalHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/detail_section_normal"
+                                android:textAppearance="@style/Text.Apptrap.Title" />
+
+                            <TextView
+                                android:id="@+id/normalCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Text.Apptrap.Body"
+                                tools:text="14 normal requests" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/normalChevron"
+                            android:layout_width="@dimen/icon_md"
+                            android:layout_height="@dimen/icon_md"
+                            android:contentDescription="@null"
+                            android:rotation="90"
+                            android:src="@drawable/ic_chevron_right" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/normalContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:ignore="UselessLeaf" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Sticky decision bar (prototype: deep slate with a slate-700 hairline) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/colorBackground"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutline" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_gutter">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            style="@style/Button.Apptrap.Danger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_delete"
+            app:icon="@drawable/ic_delete" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKeep"
+            style="@style/Button.Apptrap.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_keep" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

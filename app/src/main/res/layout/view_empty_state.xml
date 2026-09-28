@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Friendly "all clear" state — celebrates instead of showing a blank list. -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Card.Apptrap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeColor="?attr/riskSafe"
+    app:cardBackgroundColor="?attr/riskSafeContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/space_lg">
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/circle_bg"
+            android:backgroundTint="?attr/riskSafe">
+
+            <ImageView
+                android:id="@+id/emptyIcon"
+                android:layout_width="@dimen/icon_lg"
+                android:layout_height="@dimen/icon_lg"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_shield_check"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:gravity="center"
+            android:text="@string/empty_title"
+            android:textAppearance="@style/Text.Apptrap.Headline"
+            android:textColor="?attr/riskSafeOnContainer" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:gravity="center"
+            android:text="@string/empty_body"
+            android:textAppearance="@style/Text.Apptrap.Body"
+            android:textColor="?attr/riskSafeOnContainer" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEmptySeeAll"
+            style="@style/Button.Apptrap.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/empty_cta"
+            android:textColor="?attr/riskSafeOnContainer" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

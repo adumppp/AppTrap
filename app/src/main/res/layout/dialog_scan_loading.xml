@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Scan dialog with personality: breathing shield inside a sweeping arc,
+  gradient progress, live counters that bump (@anim/count_bump), pulsing
+  "checking" line (@anim/text_pulse) and a reassuring subtitle.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Card.Apptrap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/radius_xl"
+    app:contentPadding="@dimen/space_xl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Spinner + shield -->
+        <FrameLayout
+            android:layout_width="@dimen/spinner_size"
+            android:layout_height="@dimen/spinner_size">
+
+            <ProgressBar
+                android:id="@+id/spinner"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/animated_spinner" />
+
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_shield_chip">
+
+                <ImageView
+                    android:id="@+id/scanShield"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/cd_shield"
+                    android:src="@drawable/ic_shield_check"
+                    app:tint="?attr/colorPrimary" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:gravity="center"
+            android:text="@string/scan_title"
+            android:textAppearance="@style/Text.Apptrap.Headline"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:gravity="center"
+            android:text="@string/scan_sub"
+            android:textAppearance="@style/Text.Apptrap.Body"
+            android:textSize="12sp" />
+
+        <!-- Progress -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="@dimen/space_xl"
+            android:max="100"
+            android:progressDrawable="@drawable/progress_gradient"
+            tools:progress="46" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtProgressCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/Text.Apptrap.Body"
+                android:textSize="12sp"
+                tools:text="40 of 87 apps" />
+
+            <TextView
+                android:id="@+id/txtPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Text.Apptrap.Title"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="46%" />
+        </LinearLayout>
+
+        <!-- Live counters -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_sm"
+                android:layout_weight="1"
+                android:background="@drawable/badge_caution"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/space_md">
+
+                <TextView
+                    android:id="@+id/countAttention"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Text.Apptrap.Headline"
+                    android:textColor="?attr/riskCautionOnContainer"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scan_count_attention"
+                    android:textAppearance="@style/Text.Apptrap.Label"
+                    android:textColor="?attr/riskCautionOnContainer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/badge_safe"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/space_md">
+
+                <TextView
+                    android:id="@+id/countFine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Text.Apptrap.Headline"
+                    android:textColor="?attr/riskSafeOnContainer"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="37" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scan_count_fine"
+                    android:textAppearance="@style/Text.Apptrap.Label"
+                    android:textColor="?attr/riskSafeOnContainer" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Current app + timer -->
+        <TextView
+            android:id="@+id/txtNowChecking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg"
+            android:ellipsize="end"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textAppearance="@style/Text.Apptrap.Body"
+            android:textColor="@color/slate_300"
+            android:textSize="12sp"
+            tools:text="Checking: Super Torch Light" />
+
+        <TextView
+            android:id="@+id/txtElapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xxs"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:textAppearance="@style/Text.Apptrap.Label"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="10sp"
+            tools:text="0:24 elapsed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelScan"
+            style="@style/Button.Apptrap.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/scan_cancel" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
