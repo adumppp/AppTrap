@@ -3,7 +3,6 @@ package com.example.androidprivacyanalyzer
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -18,7 +17,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,10 +26,6 @@ import com.example.androidprivacyanalyzer.ui.ScanDialog
 import com.example.androidprivacyanalyzer.ui.UiAnimations
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import java.io.OutputStreamWriter
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 
@@ -58,12 +52,6 @@ class MainActivity : AppCompatActivity() {
     private var scanDialog: ScanDialog? = null
     private var scanStartTime: Long = 0
     private var targetDurationMs: Long = 15000 // Default 15 seconds
-
-    private val createCsvLauncher =
-        registerForActivityResult(ActivityResultContracts.CreateDocument("text/csv")) { uri: Uri? ->
-            if (uri == null) return@registerForActivityResult
-            exportToCsv(uri)
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,16 +91,6 @@ class MainActivity : AppCompatActivity() {
         btnScan.setOnClickListener { startScan() }
         btnSafeApps.setOnClickListener { openConsistentApps() }
 
-        findViewById<View>(R.id.btnExport).setOnClickListener {
-            if (lastScanResults.isEmpty()) {
-                Toast.makeText(this, getString(R.string.nothing_to_export), Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            val ts = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
-            createCsvLauncher.launch("apptrap_scan_$ts.csv")
-        }
-
-        findViewById<View>(R.id.btnFeedback).setOnClickListener { openFeedbackActivity() }
         emptyState.findViewById<View>(R.id.btnEmptySeeAll).setOnClickListener { openConsistentApps() }
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
@@ -318,6 +296,7 @@ class MainActivity : AppCompatActivity() {
         recyclerRisk.scheduleLayoutAnimation()
 
         btnScan.text = getString(R.string.home_rescan_cta)
+        btnSafeApps.visibility = View.VISIBLE
     }
 
     /** Distribution bar: one coloured segment per risk bucket, weighted by count. */
@@ -400,47 +379,6 @@ class MainActivity : AppCompatActivity() {
         }
         intent.putExtras(bundle)
         startActivity(intent)
-    }
-
-    private fun exportToCsv(uri: Uri) {
-        try {
-            contentResolver.openOutputStream(uri)?.use { os ->
-                OutputStreamWriter(os, Charsets.UTF_8).use { w ->
-                w.appendLine(
-                    "packageName,appName,trustLabel,trustSeverity,riskScore,riskLevel,dangerousPermsCount,claimedRole,baselineSource,confidenceScore,observedCapabilities,signals,allPerms"
-                )
-                for (app in lastScanResults) {
-                    val v = app.verdict
-                    val row = listOf(
-                        app.packageName,
-                        app.appName,
-                        v.label,
-                        v.severity.toString(),
-                        app.score.toString(),
-                        app.level,
-                        app.dangerousPerms.toString(),
-                        v.claimedRole,
-                        v.baselineSource,
-                        v.confidenceScore.toString(),
-                        v.observedCapabilities.joinToString(" | "),
-                        v.signals.joinToString(" | "),
-                        app.allPerms.joinToString(" | ")
-                    ).map { csvEscape(it) }
-                    w.appendLine(row.joinToString(","))
-                }
-                    w.flush()
-                }
-            }
-            Toast.makeText(this, getString(R.string.csv_exported), Toast.LENGTH_LONG).show()
-        } catch (e: Exception) {
-            Toast.makeText(this, getString(R.string.export_failed, e.message ?: "unknown"), Toast.LENGTH_LONG).show()
-        }
-    }
-
-    private fun csvEscape(value: String): String {
-        val needsQuotes = value.contains(",") || value.contains("\"") || value.contains("\n")
-        val escaped = value.replace("\"", "\"\"")
-        return if (needsQuotes) "\"$escaped\"" else escaped
     }
 
     override fun onDestroy() {

@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowManager
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.androidprivacyanalyzer.R
@@ -63,8 +64,12 @@ class ScanDialog(
         countAttention = view.findViewById(R.id.countAttention)
         countFine = view.findViewById(R.id.countFine)
 
-        UiAnimations.breathe(view.findViewById(R.id.scanShield))
-        txtNow?.let { UiAnimations.pulse(it) }
+        view.findViewById<View>(R.id.scanShield).startAnimation(
+            android.view.animation.AnimationUtils.loadAnimation(context, R.anim.scan_shield_breathe)
+        )
+        view.findViewById<View>(R.id.scanPulseRing).startAnimation(
+            android.view.animation.AnimationUtils.loadAnimation(context, R.anim.scan_ripple)
+        )
 
         view.findViewById<MaterialButton>(R.id.btnCancelScan).setOnClickListener {
             onCancel()
@@ -76,6 +81,11 @@ class ScanDialog(
             .setCancelable(false)
             .create()
             .also { it.show() }
+
+        val metrics = context.resources.displayMetrics
+        val margin = (32 * metrics.density).toInt()
+        val maxWidth = (500 * metrics.density).toInt()
+        dialog?.window?.setLayout(minOf(metrics.widthPixels - margin * 2, maxWidth), WindowManager.LayoutParams.WRAP_CONTENT)
 
         txtElapsed?.post(ticker)
         update(done = 0, currentApp = null, attention = 0, fine = 0)
@@ -89,7 +99,13 @@ class ScanDialog(
         txtPercent?.text = context.getString(R.string.scan_percent, percent)
         txtCount?.text = context.getString(R.string.scan_progress, done, total)
         currentApp?.let { app ->
-            txtNow?.text = context.getString(R.string.scan_now_checking, app)
+            txtNow?.let { label ->
+                label.animate().cancel()
+                label.animate().alpha(0f).translationY(4f).setDuration(100).withEndAction {
+                    label.text = context.getString(R.string.scan_now_checking, app)
+                    label.animate().alpha(1f).translationY(0f).setDuration(180).start()
+                }.start()
+            }
         }
 
         countAttention?.let { UiAnimations.bumpTo(it, attention) }

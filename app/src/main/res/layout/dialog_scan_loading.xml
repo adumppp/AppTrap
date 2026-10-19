@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/radius_xl"
-    app:contentPadding="@dimen/space_xl">
+    app:contentPadding="@dimen/space_lg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,8 +22,8 @@
 
         <!-- Spinner + shield -->
         <FrameLayout
-            android:layout_width="@dimen/spinner_size"
-            android:layout_height="@dimen/spinner_size">
+            android:layout_width="88dp"
+            android:layout_height="88dp">
 
             <ProgressBar
                 android:id="@+id/spinner"
@@ -33,20 +33,26 @@
                 android:indeterminate="true"
                 android:indeterminateDrawable="@drawable/animated_spinner" />
 
+            <View
+                android:id="@+id/scanPulseRing"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_scan_pulse_ring" />
+
             <FrameLayout
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_shield_chip">
+                android:layout_gravity="center">
 
                 <ImageView
                     android:id="@+id/scanShield"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/cd_shield"
-                    android:src="@drawable/ic_shield_check"
-                    app:tint="?attr/colorPrimary" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/apptrap_shield" />
             </FrameLayout>
         </FrameLayout>
 
@@ -74,7 +80,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_marginTop="@dimen/space_xl"
+            android:layout_marginTop="@dimen/space_lg"
             android:max="100"
             android:progressDrawable="@drawable/progress_gradient"
             tools:progress="46" />
@@ -175,11 +181,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_lg"
             android:ellipsize="end"
-            android:fontFamily="monospace"
             android:gravity="center"
             android:maxLines="1"
             android:textAppearance="@style/Text.Apptrap.Body"
-            android:textColor="@color/slate_300"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="12sp"
             tools:text="Checking: Super Torch Light" />
 
@@ -188,7 +193,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_xxs"
-            android:fontFamily="monospace"
             android:gravity="center"
             android:textAppearance="@style/Text.Apptrap.Label"
             android:textAllCaps="false"

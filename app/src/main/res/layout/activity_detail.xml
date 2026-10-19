@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingBottom="150dp">
+        android:paddingBottom="230dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -319,6 +319,14 @@
             android:layout_height="wrap_content"
             android:text="@string/detail_delete"
             app:icon="@drawable/ic_delete" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReviewPermissions"
+            style="@style/Button.Apptrap.Tonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_review_permissions"
+            app:icon="@drawable/ic_security" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKeep"

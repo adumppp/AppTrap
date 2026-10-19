@@ -3,6 +3,8 @@
 <resources>
     <string name="app_name">AppTrap</string>
     <string name="detail_nav_title">Analisis Aplikasi</string>
+    <string name="detail_permissions_settings_unavailable">Tetapan aplikasi Android tidak dapat dibuka.</string>
+    <string name="detail_review_permissions">Semak kebenaran</string>
 
     <!-- ===== Tanya AI (lembaran sembang di skrin butiran) ===== -->
 
@@ -23,7 +25,7 @@
     <string name="home_scan_cta">Periksa aplikasi saya</string>
     <string name="home_rescan_cta">Periksa semula</string>
     <string name="home_summary_title">Kami periksa %1$d aplikasi</string>
-    <string name="home_summary_body">%1$d perlu diperhatikan Â· %2$d nampak okey</string>
+    <string name="home_summary_body">%1$d perlu diperhatikan · %2$d nampak okey</string>
     <string name="home_section_attention">Patut diperhatikan</string>
     <string name="home_section_hint">Disusun ikut berapa banyak yang diminta. Tekan mana-mana aplikasi untuk tahu sebabnya.</string>
     <string name="home_safe_apps">Aplikasi yang nampak okey</string>
@@ -35,7 +37,7 @@
     <string name="empty_body">Tiada aplikasi anda yang minta lebih daripada keperluan. Bagus.</string>
     <string name="empty_cta">Lihat semua aplikasi yang diperiksa</string>
 
-    <string name="scan_title">Sedang periksa aplikasi andaâ€¦</string>
+    <string name="scan_title">Sedang periksa aplikasi anda…</string>
     <string name="scan_sub">Biar terbuka sahaja. Tidak lama.</string>
     <string name="scan_progress">%1$d daripada %2$d aplikasi</string>
     <string name="scan_now_checking">Sedang periksa: %1$s</string>
@@ -44,7 +46,7 @@
     <string name="scan_elapsed">%1$d:%2$02d berlalu</string>
     <string name="scan_cancel">Berhenti</string>
     <string name="scan_cancelled">Pemeriksaan dihentikan</string>
-    <string name="scan_in_progress">Pemeriksaan sedang berjalanâ€¦</string>
+    <string name="scan_in_progress">Pemeriksaan sedang berjalan…</string>
 
     <string name="risk_consistent">Nampak okey</string>
     <string name="risk_consistent_body">Aplikasi ini hanya minta perkara yang memang diperlukan.</string>
@@ -69,8 +71,12 @@
     <string name="detail_keep">Simpan sahaja</string>
 
     <string name="delete_title">Buang %1$s?</string>
-    <string name="delete_body">Android akan minta anda sahkan di skrin seterusnya. Gambar, mesej dan aplikasi lain tidak terjejas. Anda boleh pasang semula dari Play Store bila-bila masa.</string>
-    <string name="delete_confirm">Ya, buang</string>
+    <string name="delete_body">AppTrap akan membuka halaman Maklumat aplikasi ini. Aplikasi ini kekal dipasang sehingga anda memilih Nyahpasang dan mengesahkannya dengan Android.</string>
+    <string name="delete_step_1">1. Pada halaman Maklumat aplikasi, tekan Nyahpasang.</string>
+    <string name="delete_step_2">2. Tekan Nyahpasang sekali lagi jika Android meminta pengesahan.</string>
+    <string name="delete_step_3">3. Jika berubah fikiran, kembali tanpa menyahpasang.</string>
+    <string name="delete_settings_unavailable">Maklumat aplikasi Android tidak dapat dibuka.</string>
+    <string name="delete_confirm">Buka maklumat aplikasi</string>
     <string name="delete_cancel">Bukan sekarang</string>
 
     <string name="safe_title">Aplikasi yang nampak okey</string>
@@ -81,9 +87,23 @@
     <string name="fb_sub">Dua soalan sahaja. Ia membantu kami jadikan ini lebih jelas.</string>
     <string name="fb_q_clear">Adakah keputusan mudah difahami?</string>
     <string name="fb_q_open">Ada apa-apa yang mengelirukan?</string>
-    <string name="fb_hint_open">Taip di siniâ€¦</string>
+    <string name="fb_hint_open">Taip di sini…</string>
+    <string name="fb_include_results">Sertakan keputusan imbasan dalam e-mel</string>
+    <string name="fb_include_results_hint">Melampirkan fail CSV ringkas dengan nama aplikasi yang diimbas, skor risiko dan kebenaran yang diminta. Nyahpilih untuk menghantar maklum balas sahaja.</string>
+    <string name="fb_no_results_hint">Tiada keputusan imbasan untuk disertakan. Maklum balas dan maklumat peranti masih boleh dihantar.</string>
+    <string name="fb_guide_title">Sebelum menghantar</string>
+    <string name="fb_guide_intro">Aplikasi e-mel anda akan dibuka dengan draf. Ikut langkah ini untuk menghantar maklum balas:</string>
+    <string name="fb_guide_step_1">Pilih aplikasi e-mel daripada menu.</string>
+    <string name="fb_guide_step_2">Semak penerima dan mesej. Anda boleh mengedit atau membatalkannya.</string>
+    <string name="fb_guide_step_3">Tekan Hantar dalam aplikasi e-mel. AppTrap tidak dapat mengesahkan penghantaran.</string>
+    <string name="fb_guide_privacy_title">Kandungan draf</string>
+    <string name="fb_guide_privacy_without_results">Draf mengandungi komen serta maklumat peranti dan AppTrap anda. Data aplikasi yang diimbas tidak disertakan kerana pilihan tidak ditanda. Tiada apa-apa dihantar sehingga anda menekan Hantar.</string>
+    <string name="fb_guide_privacy_with_results">Fail CSV dengan nama aplikasi yang diimbas, nama pakej, skor risiko dan kebenaran yang diminta akan dilampirkan pada draf e-mel. Tiada apa-apa dihantar sehingga anda menekan Hantar.</string>
+    <string name="fb_export_failed">Fail keputusan imbasan tidak dapat disediakan. Cuba lagi atau nyahpilih pilihan lampiran.</string>
+    <string name="fb_guide_cancel">Bukan sekarang</string>
+    <string name="fb_guide_continue">Buka e-mel</string>
     <string name="fb_submit">Hantar</string>
-    <string name="fb_thanks">Terima kasih banyak.</string>
+    <string name="fb_thanks">Tekan Hantar dalam aplikasi e-mel untuk menghantar maklum balas.</string>
     <string name="fb_yes">Ya</string>
     <string name="fb_no">Tidak</string>
 

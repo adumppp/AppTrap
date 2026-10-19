@@ -6,14 +6,17 @@
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/feedbackScroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
     android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/feedbackContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/screen_gutter"
         android:paddingTop="@dimen/space_lg"
@@ -51,26 +54,27 @@
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/toggleClear"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/space_sm"
+            android:background="@drawable/badge_bg"
+            android:padding="4dp"
             app:selectionRequired="true"
             app:singleSelection="true">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnClearYes"
-                style="@style/Toggle.Apptrap.Lang"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="1"
+                style="@style/Toggle.Apptrap.Answer"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
                 android:text="@string/fb_yes" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnClearNo"
-                style="@style/Toggle.Apptrap.Lang"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="1"
+                style="@style/Toggle.Apptrap.Answer"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
                 android:text="@string/fb_no" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -98,6 +102,35 @@
                 android:inputType="textMultiLine"
                 android:minLines="4" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Card.Apptrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/chkIncludeResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/fb_include_results"
+                    android:textAppearance="@style/Text.Apptrap.Title" />
+
+                <TextView
+                    android:id="@+id/txtIncludeResultsHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xs"
+                    android:text="@string/fb_include_results_hint"
+                    android:textAppearance="@style/Text.Apptrap.Body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <Space
             android:layout_width="match_parent"

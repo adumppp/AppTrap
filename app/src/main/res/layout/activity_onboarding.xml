@@ -57,13 +57,11 @@
                 <!-- start @anim/shield_breathe on this view in onResume() -->
                 <ImageView
                     android:id="@+id/heroShield"
-                    android:layout_width="68dp"
-                    android:layout_height="68dp"
-                    android:background="@drawable/bg_shield_chip"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
                     android:contentDescription="@string/cd_shield"
-                    android:padding="15dp"
-                    android:src="@drawable/ic_shield_check"
-                    app:tint="@color/indigo_200" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/apptrap_shield" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -72,7 +70,7 @@
                     android:gravity="center"
                     android:text="@string/onb_title"
                     android:textAppearance="@style/Text.Apptrap.Display"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/indigo_950" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -81,7 +79,7 @@
                     android:gravity="center"
                     android:text="@string/onb_sub"
                     android:textAppearance="@style/Text.Apptrap.Body"
-                    android:textColor="@color/indigo_100" />
+                    android:textColor="@color/indigo_700" />
             </LinearLayout>
         </FrameLayout>
 

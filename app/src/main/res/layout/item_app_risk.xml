@@ -120,7 +120,7 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:textAppearance="@style/Text.Apptrap.Body"
-                android:textColor="@color/slate_300"
+                android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="12sp"
                 tools:text="Can read your contact list · Can listen through the microphone" />
         </LinearLayout>

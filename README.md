@@ -1,294 +1,158 @@
 <p align="center">
-  <img src="app/src/main/ic_launcher-playstore.png" alt="AppTrap Logo" width="120" height="120" style="border-radius: 20px;">
+  <img src="app/src/main/ic_launcher-playstore.png" alt="AppTrap logo" width="120">
 </p>
 
-<h1 align="center">AppTrap — Android Privacy Analyzer</h1>
+# AppTrap — Android Privacy Analyzer
 
-<p align="center">
-  <strong>A rule-based + ML-powered Android application that detects privacy-overreaching apps on your device</strong>
-</p>
+AppTrap helps Android users understand whether installed apps request permissions that fit their purpose. It combines a bundled app dataset, online permission research, a k-nearest-neighbors classifier, and permission-combination rules, then explains the results in English or Bahasa Malaysia.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white" alt="Platform">
-  <img src="https://img.shields.io/badge/Min%20SDK-26%20(Oreo)-blue" alt="Min SDK">
-  <img src="https://img.shields.io/badge/Target%20SDK-36-blue" alt="Target SDK">
-  <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
-  <img src="https://img.shields.io/badge/Dataset-2%2C308%20Apps-orange" alt="Dataset">
-  <img src="https://img.shields.io/badge/License-Academic%20(FYP)-lightgrey" alt="License">
-</p>
+This repository contains the latest **ApptrapLight** source: a light Material interface, guided app review, and optional scan-result sharing through an email draft. It is an academic Final Year Project (FYP) for a Diploma in Cybersecurity.
 
----
+## Interface
 
-## 📖 About
+Screenshots supplied on 18 October 2026 show the app running on an Android tablet. Counts and scores are examples from that device, not benchmark results.
 
-**AppTrap** is an Android privacy analysis tool developed as a **Final Year Project (FYP)** for the Diploma in Cybersecurity program. It scans all installed applications on a user's device and evaluates whether each app's requested permissions are consistent with its claimed purpose — or if they overreach into suspicious territory.
+| Start a check | Scan progress | Results |
+| --- | --- | --- |
+| <img src="docs/screenshots/onboarding.jpg" width="240" alt="First-run explanation"> | <img src="docs/screenshots/scan-progress.jpg" width="240" alt="Scan progress dialog"> | <img src="docs/screenshots/scan-results.jpg" width="240" alt="Completed scan and apps worth reviewing"> |
 
-Unlike simple permission counters, AppTrap uses an **8-stage analysis pipeline** combining a curated dataset of 2,308 apps, online research lookups (Google Play Store & Exodus Privacy), k-Nearest Neighbors machine learning, and cross-permission anomaly detection rules to deliver accurate, context-aware risk verdicts.
+| App analysis | Review or remove | Feedback |
+| --- | --- | --- |
+| <img src="docs/screenshots/analysis-risk.jpg" width="240" alt="App risk score and permission explanations"> | <img src="docs/screenshots/analysis-actions.jpg" width="240" alt="Remove, review permissions, and keep actions"> | <img src="docs/screenshots/feedback-form.jpg" width="240" alt="Feedback with optional scan results unchecked"> |
 
-### 🎯 Problem Statement
+[View all 15 screenshots and captions](docs/screenshots/README.md).
 
-Most Android users are unaware of how many sensitive permissions their installed apps request — and whether those permissions are actually justified. A flashlight app requesting SMS, contacts, and location access is a red flag, but a messaging app requesting the same permissions is perfectly normal. AppTrap bridges this gap by analyzing permissions **in context**.
+## What changed in this update
 
----
+- Light theme with the shield artwork, refreshed colors, onboarding, scan animation, and result layout. `ApptrapApp` explicitly selects light mode.
+- Results now focus on **Check again** and **Apps that look fine**. The standalone **Save a copy** and feedback buttons have been removed.
+- App Analysis offers **Remove this app**, **Review permissions**, and **Keep it**. Review permissions opens the selected app's Android App info screen; removal guidance also opens App info and leaves uninstall confirmation to Android.
+- The separate requested-permissions section has been removed from App Analysis; plain-language signal explanations remain.
+- Feedback is available from the Back/exit prompt. A new guide explains how to review and send the email draft.
+- **Include scanned results in the email** is optional and unchecked by default. Selecting it attaches a five-column CSV through a restricted cache FileProvider.
+- Feedback layouts constrain content width for tablets; English and Malay strings cover the updated flows.
 
-## ✨ Features
+## Features and usage
 
-### Core Analysis
-- **8-Stage TrustEngine Pipeline** — Dataset lookup → Research Engine → Package-name heuristic → K-NN ML → Manifest analysis → Permission differential → Anomaly rules → Final verdict
-- **19 Semantic Capabilities** — SMS, call log, contacts, location, overlay, boot, camera, microphone, storage, notifications, biometric, network, bluetooth, NFC, install unknown apps, phone state, accessibility, usage stats, DRM
-- **4-Tier Risk Classification** — CONSISTENT (safe), OVERREACH (mild), DECEPTIVE (concerning), SPYWARE-LIKE (critical)
-- **Cross-Permission Anomaly Detection** — 6 behavioral rules that catch suspicious permission combos (e.g., overlay + boot + network = stalkerware pattern)
+1. Launch AppTrap, choose **EN** or **BM**, and complete the first-run introduction.
+2. Start a check. AppTrap scans installed non-system apps, excluding updated system apps, and shows progress. Scanning can be stopped.
+3. Review the summary and up to ten highest-scoring apps under **Worth a look**. Open an app to see its score, confidence, and permission explanations.
+4. Use **Review permissions** to inspect its settings, **Remove this app** for removal guidance, or **Keep it** to return. AppTrap does not silently uninstall apps or revoke permissions.
+5. Open **Apps that look fine** to review apps with a zero severity score, or run another check.
+6. Press Back to use the exit feedback prompt. Choose **Tell us what you think**, answer the questions, and optionally include scan results. Continue to an email app, review the draft and attachment, and send it yourself.
 
-### Intelligence Sources
-- **Curated Dataset** — 2,308 verified app profiles across 16 categories with expected permission baselines
-- **ResearchEngine** — Live lookups via Google Play Store (batchexecute API) and Exodus Privacy database
-- **SimpleML (k-NN)** — Jaccard similarity classifier (k=5) for unknown apps not in the dataset or online sources
-- **OEM Bypass** — Recognizes manufacturer platform apps (Xiaomi, Samsung, Huawei, OPPO, Vivo, etc.) to avoid false positives
+A zero score means the current rules found no concern; it does not establish that an app is safe. High scores flag permission patterns for review and are not proof of tracking, malware, or malicious intent.
 
-### User Experience
-- **Material 3 Dark Theme** — Modern, eye-friendly design with dynamic color coding per risk level
-- **Animated Scan Dialog** — Breathing shield, gradient progress bar, live counters, elapsed timer with adaptive pacing
-- **Detail View** — Per-app breakdown with score ring, risk badge, suspicious signals, normal permissions, and action buttons
-- **Safe Apps View** — Dedicated screen showing all apps that passed every check (severity = 0)
-- **Onboarding** — First-run explainer in plain language for non-technical users
-- **Bilingual Support** — English and Bahasa Malaysia (EN/BM toggle)
+## Analysis pipeline
 
-### Data & Feedback
-- **CSV Export** — 13-field export with full analysis data for every scanned app
-- **Feedback System** — In-app email feedback with automatic scan summary attachment
-- **TrustLog** — Complete engine decision trace for every app (debug/academic evidence)
+The implementation lives in `TrustEngine.kt`:
 
----
+1. Look up the package in the bundled dataset.
+2. If needed, try `ResearchEngine`: Google Play permission lookup, then Exodus Privacy, then a package-name heuristic.
+3. Use display-name role inference, k-NN (Jaccard similarity, k=5), and finally a generic baseline when earlier sources are insufficient.
+4. Normalize manifest-declared permissions into capability groups. This happens before classification because k-NN consumes those capabilities.
+5. Compare observed capabilities with the expected baseline and apply capability weights.
+6. Apply source/confidence adjustments and severity ceilings.
+7. Evaluate six cross-permission rules, with role exemptions and OEM package-prefix handling.
+8. Produce a `TrustVerdict` containing the role, baseline source, confidence, signals, severity, and technical label.
 
-## 🏗️ Architecture
+Unknown roles skip per-capability penalties and rely on combination rules. OEM handling uses package prefixes, not certificate verification. Permissions are requested manifest permissions, not a measurement of actual data access or current runtime grants.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    TrustEngine.kt                        │
-│  ┌──────────┐  ┌──────────────┐  ┌────────────────────┐ │
-│  │ STAGE 1  │  │   STAGE 2    │  │     STAGE 3        │ │
-│  │ Dataset  │→ │ ResearchEngine│→ │ K-NN (SimpleML.kt) │ │
-│  │ Lookup   │  │ (Exodus/Play)│  │ Jaccard, k=5       │ │
-│  └──────────┘  └──────────────┘  └────────────────────┘ │
-│       ↓ (first match wins)                               │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │ STAGE 4: Manifest → 19 observed capabilities     │   │
-│  │ STAGE 5: Expected vs Observed differential       │   │
-│  │ STAGE 6: Confidence adjustment + severity caps   │   │
-│  │ STAGE 7: Cross-permission anomaly rules (6)      │   │
-│  │ STAGE 8: Final verdict → TrustVerdict            │   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
-         ↓
-┌─────────────────────┐  ┌──────────────────────────┐
-│   MainActivity.kt   │  │    DetailActivity.kt     │
-│ • Scan all apps     │→ │ • Per-app risk breakdown │
-│ • Top 10 risky list │  │ • Score ring + signals   │
-│ • Distribution bar  │  │ • Remove / Keep actions  │
-│ • CSV export        │  └──────────────────────────┘
-│ • Safe apps view    │
-└─────────────────────┘
-```
+| Severity | Engine label | English interface label |
+| --- | --- | --- |
+| 0 | `CONSISTENT` | Looks fine |
+| 1–10 | `OVERREACH` | Asks for extra |
+| 11–25 | `DECEPTIVE` | Doesn't add up |
+| 26–100 | `SPYWARE-LIKE` | Tracks you aggressively |
 
----
+The score is a heuristic concern score, not a probability. Online availability, stale datasets, inferred app roles, and broad exemptions can affect results. The Google Play integration uses an unofficial endpoint that may change.
 
-## 📂 Project Structure
+## Dataset
 
-```
-app/src/main/
-├── assets/
-│   └── dataset_final.csv              # 2,308 app profiles (16 categories)
-├── java/com/example/androidprivacyanalyzer/
-│   ├── TrustEngine.kt                 # 8-stage analysis pipeline (856 lines)
-│   ├── ResearchEngine.kt              # Exodus + Play Store + heuristic lookups
-│   ├── SimpleML.kt                    # k-NN classifier (Jaccard similarity)
-│   ├── AppDataset.kt                  # CSV dataset loader & profile lookup
-│   ├── TrustVerdict.kt                # Verdict data class (Serializable)
-│   ├── TrustLog.kt                    # Engine debug logging system
-│   ├── MainActivity.kt                # Home screen, scan orchestration, CSV export
-│   ├── DetailActivity.kt              # Per-app risk detail view
-│   ├── ConsistentAppsActivity.kt      # Safe apps list
-│   ├── FeedbackActivity.kt            # User feedback via email
-│   ├── OnboardingActivity.kt          # First-run explainer
-│   └── ui/
-│       ├── ScanDialog.kt              # Animated scanning dialog
-│       ├── RiskAdapter.kt             # RecyclerView adapter for risky apps
-│       ├── ConsistentAdapter.kt       # RecyclerView adapter for safe apps
-│       ├── RiskLevel.kt               # Risk level colors, labels, drawables
-│       ├── SignalViews.kt             # Signal card rendering
-│       ├── PermissionPlainLanguage.kt  # Human-friendly permission descriptions
-│       ├── LanguageToggle.kt          # EN/BM language switcher
-│       ├── DeleteGuideDialog.kt       # Step-by-step app removal guide
-│       └── UiAnimations.kt           # Breathe, pulse, morph, count animations
-└── res/
-    ├── layout/                        # 12 XML layouts
-    ├── anim/                          # 9 animation resources
-    ├── drawable/                      # Icons, badges, backgrounds, spinner
-    ├── values/                        # Colors, strings, styles, themes
-    └── values-ms/                     # Bahasa Malaysia translations
+The active file is [`app/src/main/assets/dataset_final.csv`](app/src/main/assets/dataset_final.csv): **2,306 rows, 2,306 unique package names, and 16 roles**, counted from this source snapshot. `AppDataset` loads package name, app name, role, expected capabilities, and source. Tracker metadata columns are present but are not used by the analyzer.
+
+Other CSV files in `assets/` are retained source datasets; they are not the active baseline loaded by `AppDataset`. Dataset size and coverage should not be read as independently verified detection accuracy.
+
+## Privacy and feedback
+
+- Analysis runs on the device, but research lookups can send app package identifiers to Google Play and Exodus Privacy. The current onboarding text says that nothing leaves the phone; that wording is broader than the implemented network behavior.
+- `TrustLog` records local analysis traces for debugging and academic review.
+- Feedback opens an editable email draft addressed to the configured project feedback recipient. The body includes the feedback answer, written message, timestamp, app version, Android version, and device manufacturer/model.
+- Scan details are excluded unless the checkbox is selected. When selected, the attachment contains **app name, package name, assessment, risk score, and requested permissions** for every scanned app, sorted by severity.
+- The CSV is created under the app's `cacheDir/feedback_exports` directory and shared with temporary read permission. The app cannot confirm email delivery; the user must send from their email client.
+- The manifest declares internet/network-state access, broad package visibility, and legacy external-storage permission up to API 28. The broad package-visibility declaration is marked for testing in the source.
+
+## Build and run
+
+### Project requirements
+
+| Setting | Repository value |
+| --- | --- |
+| Android Gradle Plugin | 9.0.0 |
+| Gradle wrapper | 9.1.0, with distribution checksum |
+| Compile / target SDK | 36 |
+| Minimum Android version | API 26 (Android 8.0) |
+| Java source / target compatibility | 11 |
+| Application ID | `com.example.androidprivacyanalyzer` |
+| Version | `1.0` (`versionCode = 1`) |
+
+Use Android Studio with support for AGP 9.0, a compatible Gradle JDK (JDK 17 or newer), and Android SDK Platform 36. Java 11 in the module configuration is the source compatibility level, not the Gradle runtime requirement.
+
+```sh
+git clone https://github.com/adumppp/AppTrap.git
+cd AppTrap
 ```
 
----
+Open the root folder in Android Studio, select the Gradle JDK, configure the local SDK location, and sync. Connect an Android 8.0+ device with USB debugging enabled, then run the `app` configuration. A device with installed third-party apps gives a more representative scan than a fresh emulator.
 
-## 📊 Dataset Categories (16)
+On Windows:
 
-| Category | Examples |
-|----------|----------|
-| Communications / Messaging | WhatsApp, Telegram, Signal |
-| Web Browser | Chrome, Firefox, Brave |
-| Social Media | Instagram, TikTok, Facebook |
-| Email Client | Gmail, Outlook |
-| Cloud Storage | Google Drive, Dropbox |
-| Maps / Navigation | Google Maps, Waze |
-| Video Streaming | YouTube, Netflix |
-| Music Streaming | Spotify, Apple Music |
-| Productivity | Microsoft Office, Notion |
-| Security / Antivirus | Kaspersky, Bitdefender |
-| Finance / Banking | Banking apps, e-wallets |
-| Games | PUBG, Mobile Legends, Roblox |
-| Media / Photo Editing | Snapseed, Adobe Lightroom |
-| System Tools | Launchers, file managers |
-| Smart Home / IoT | Google Home, Tuya Smart |
-| News / RSS | Google News, Flipboard |
+```powershell
+.\gradlew.bat assembleDebug testDebugUnitTest lintDebug
+```
 
----
+On macOS/Linux:
 
-## 🚀 Installation
+```sh
+chmod +x gradlew
+./gradlew assembleDebug testDebugUnitTest lintDebug
+```
 
-### Prerequisites
+The debug APK is generated at `app/build/outputs/apk/debug/app-debug.apk`. Build output, signing material, SDK paths, and local IDE state are excluded from version control. This source update does not publish an APK or a signed release.
 
-- **Android Studio** Ladybug (2024.2.1) or newer
-- **JDK 11** or higher
-- **Android SDK** with API Level 26+ (Android 8.0 Oreo)
-- A physical Android device is recommended for accurate scanning (emulator has limited installed apps)
+### Verification and manual checks
 
-### Steps
+Verified on 20 October 2026: `assembleDebug`, `testDebugUnitTest`, and `lintDebug` pass. The existing unit suite contains one passing test. Lint reports no errors and 83 warnings; these warnings remain for future cleanup. No device instrumentation or interactive device checks were run for this update.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/adumppp/AppTrap.git
-   cd AppTrap
-   ```
+The existing unit and instrumentation tests are template smoke tests; they do not validate detection accuracy. Device checks should cover EN/BM switching, start/cancel/rescan, result navigation, App info actions, exit feedback, and email drafts with the attachment option both off and on. Instrumentation checks require a connected device or emulator (`connectedDebugAndroidTest`).
 
-2. **Open in Android Studio**
-   - Launch Android Studio
-   - Select **File → Open** and navigate to the cloned `AppTrap` folder
-   - Wait for Gradle sync to complete (this may take a few minutes on first run)
+If Android Studio's layout preview differs from runtime, select the light theme and check preview-only `tools:` visibility. The Application class and scan state are not executed by a static layout preview.
 
-3. **Build the project**
-   - Click **Build → Make Project** or press `Ctrl+F9`
-   - Ensure there are no build errors
+## Source map
 
-4. **Run on a device**
-   - Connect your Android device via USB (enable **USB Debugging** in Developer Options)
-   - Or create an AVD (Android Virtual Device) from **Tools → Device Manager**
-   - Click **Run → Run 'app'** or press `Shift+F10`
-   - Select your device and wait for the app to install
+| Path | Purpose |
+| --- | --- |
+| `app/src/main/java/com/example/androidprivacyanalyzer/TrustEngine.kt` | Baseline resolution, scoring, and verdicts |
+| `ResearchEngine.kt`, `SimpleML.kt`, `AppDataset.kt` in the same directory | Online lookups, classifier, dataset loading |
+| `MainActivity.kt`, `DetailActivity.kt`, `ConsistentAppsActivity.kt` | Scanning, per-app analysis, zero-score app list |
+| `FeedbackActivity.kt`, `OnboardingActivity.kt`, `ApptrapApp.kt` | Feedback/CSV sharing, introduction, application theme |
+| `app/src/main/java/com/example/androidprivacyanalyzer/ui/` | Adapters, plain-language signals, dialogs, animation, language toggle |
+| `app/src/main/res/` | Android Views layouts, artwork, themes, English and Malay resources |
+| `app/src/main/assets/` | Bundled baseline and supporting datasets |
+| `docs/screenshots/` | Supplied UI screenshots and gallery |
 
-### Direct APK Install
+The UI uses Android Views, Material components, RecyclerView, Kotlin coroutines, and a scan executor. It does not use Jetpack Compose.
 
-If you have a pre-built APK:
+## Team and academic context
 
-1. Transfer the `apptrap.apk` to your Android device
-2. Open the APK file on your device
-3. Allow installation from unknown sources if prompted
-4. Launch **AppTrap** from your app drawer
+| Team member | Contribution |
+| --- | --- |
+| Adam | Software logic, TrustEngine, ML integration, ResearchEngine |
+| Izz | UI/UX, Material layouts, animations, theme |
+| Ikhwan | Dataset construction, validation, evaluation methodology |
 
----
+**Supervisor:** Mr. Yasir. Developed as a Diploma in Cybersecurity Final Year Project.
 
-## 📱 Usage
+## License
 
-1. **First Launch** — The onboarding screen explains what AppTrap does in plain language. Choose your language (EN/BM) and tap **Start**.
-
-2. **Scan** — Tap the **Scan My Apps** button. AppTrap will analyze all non-system apps on your device. The animated dialog shows real-time progress.
-
-3. **Review Results** — After scanning:
-   - The **top 10 riskiest apps** are displayed with color-coded risk badges
-   - A **distribution bar** shows the proportion of each risk level
-   - Tap any app to see the full **detail breakdown** (score ring, suspicious signals, normal permissions)
-
-4. **Take Action** — In the detail view:
-   - Tap **Remove** for a step-by-step guide to uninstall/disable the app
-   - Tap **Keep** if you trust the app
-
-5. **Safe Apps** — Tap **Safe Apps** to see all apps that passed every check (severity = 0)
-
-6. **Export** — Tap the export button to save a full CSV report of all scan results
-
-7. **Feedback** — Submit feedback directly via email through the in-app feedback system
-
----
-
-## 🔬 How the Analysis Works
-
-### Risk Scoring
-
-Each app receives a **severity score (0–100)** based on:
-
-| Factor | Impact |
-|--------|--------|
-| Unexpected capabilities for the app's role | Weighted penalty per capability (e.g., SMS = +8, camera = +4) |
-| Unknown app penalty | +1 if app has unexpected weighted capabilities and isn't in the dataset |
-| Anomaly rule triggers | +4 to +7 per rule (stalkerware pattern, spyware pattern, accessibility abuse, etc.) |
-| Confidence-based caps | Limits max severity for apps with uncertain baselines |
-
-### Risk Labels
-
-| Label | Severity | Meaning |
-|-------|----------|---------|
-| 🟢 **CONSISTENT** | 0 | Permissions match expected behavior perfectly |
-| 🟡 **OVERREACH** | 1–10 | Slightly more permissions than expected |
-| 🟠 **DECEPTIVE** | 11–25 | Significant permission overreach beyond stated purpose |
-| 🔴 **SPYWARE-LIKE** | 26–100 | Severe overreach or dangerous permission combinations |
-
----
-
-## 🛠️ Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| Language | Kotlin |
-| UI Framework | Android Views + Material Design 3 |
-| ML Algorithm | k-Nearest Neighbors (Jaccard similarity, k=5) |
-| Online Research | Exodus Privacy API, Google Play Store (batchexecute) |
-| Async | Kotlin Coroutines + ExecutorService |
-| Min SDK | Android 8.0 (API 26) |
-| Target SDK | Android 16 (API 36) |
-| Build System | Gradle (Kotlin DSL) with Version Catalog |
-
----
-
-## 👥 Team
-
-| Name | Role |
-|------|------|
-| **Adam** | Software logic, TrustEngine pipeline, ML integration, ResearchEngine |
-| **Izz** | UI/UX design, Material3 layouts, animations, dark theme |
-| **Ikhwan** | Dataset construction, validation, evaluation methodology |
-
-**Supervisor:** Mr. Yasir
-
----
-
-## 📄 Academic Context
-
-This project was developed as part of the **Final Year Project (FYP)** for the Diploma program at the polytechnic level, spanning 19 weeks from proposal to final defense.
-
-### Key Contributions
-- A curated dataset of **2,308 Android app permission profiles** across 16 categories
-- An **8-stage hybrid analysis pipeline** combining rule-based detection with k-NN machine learning
-- **Real-time online research** via Exodus Privacy and Google Play Store APIs
-- **Cross-permission anomaly rules** for detecting stalkerware, spyware, and permission abuse patterns
-- A **user-friendly mobile interface** designed for non-technical users
-
----
-
-## 📜 License
-
-This project was developed for academic purposes as a Final Year Project. All rights reserved by the development team.
-
----
-
-<p align="center">
-  <strong>AppTrap</strong> — Because your privacy shouldn't be an afterthought. 🛡️
-</p>
+This project was developed for academic purposes. All rights reserved by the development team; no open-source license grant is included in this repository.

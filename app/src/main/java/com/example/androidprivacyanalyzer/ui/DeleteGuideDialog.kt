@@ -6,6 +6,7 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.widget.TextView
+import android.widget.Toast
 import com.example.androidprivacyanalyzer.R
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -30,12 +31,16 @@ object DeleteGuideDialog {
 
         view.findViewById<MaterialButton>(R.id.btnConfirmDelete).setOnClickListener {
             dialog.dismiss()
-            context.startActivity(
-                Intent(
-                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                    Uri.fromParts("package", packageName, null)
+            try {
+                context.startActivity(
+                    Intent(
+                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.fromParts("package", packageName, null)
+                    )
                 )
-            )
+            } catch (_: Exception) {
+                Toast.makeText(context, R.string.delete_settings_unavailable, Toast.LENGTH_SHORT).show()
+            }
         }
         view.findViewById<MaterialButton>(R.id.btnCancelDelete).setOnClickListener {
             dialog.dismiss()

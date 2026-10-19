@@ -1,7 +1,9 @@
 package com.example.androidprivacyanalyzer
 
 import android.content.pm.PackageManager
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -111,6 +113,9 @@ class DetailActivity : AppCompatActivity() {
         findViewById<MaterialButton>(R.id.btnDelete).setOnClickListener {
             DeleteGuideDialog.show(this, app.appName, app.packageName)
         }
+        findViewById<MaterialButton>(R.id.btnReviewPermissions).setOnClickListener {
+            openAppPermissionSettings(app.packageName)
+        }
         findViewById<MaterialButton>(R.id.btnKeep).setOnClickListener { finish() }
     }
 
@@ -118,6 +123,17 @@ class DetailActivity : AppCompatActivity() {
         confidence.startsWith("HIGH") -> R.string.detail_confidence_high
         confidence.startsWith("MEDIUM") -> R.string.detail_confidence_medium
         else -> R.string.detail_confidence_low
+    }
+
+    private fun openAppPermissionSettings(targetPackage: String) {
+        val settingsIntent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+            data = Uri.fromParts("package", targetPackage, null)
+        }
+        try {
+            startActivity(settingsIntent)
+        } catch (_: Exception) {
+            Toast.makeText(this, R.string.detail_permissions_settings_unavailable, Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {

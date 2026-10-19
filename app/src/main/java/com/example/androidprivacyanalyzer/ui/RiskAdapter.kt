@@ -1,5 +1,6 @@
 package com.example.androidprivacyanalyzer.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,8 @@ class RiskAdapter(
 
     object Diff : DiffUtil.ItemCallback<AppRisk>() {
         override fun areItemsTheSame(a: AppRisk, b: AppRisk) = a.packageName == b.packageName
+        // Kotlin List equality compares ordered elements, including signal text.
+        @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(a: AppRisk, b: AppRisk) =
             a.verdict.severity == b.verdict.severity &&
                 a.verdict.label == b.verdict.label &&

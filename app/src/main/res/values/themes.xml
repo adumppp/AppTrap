@@ -23,7 +23,7 @@
 
     <style name="Theme.Apptrap" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Brand -->
-        <item name="colorPrimary">@color/indigo_500</item>
+        <item name="colorPrimary">@color/indigo_600</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/indigo_50</item>
         <item name="colorOnPrimaryContainer">@color/indigo_700</item>

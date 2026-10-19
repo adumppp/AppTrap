@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   English copy. Plain language only: no "permission", "overlay", "package".
   Bahasa Malaysia lives in values-ms/strings.xml.
@@ -25,14 +25,14 @@
     <string name="home_scan_cta">Check my apps</string>
     <string name="home_rescan_cta">Check again</string>
     <string name="home_summary_title">We looked at %1$d apps</string>
-    <string name="home_summary_body">%1$d need a closer look Â· %2$d look fine</string>
+    <string name="home_summary_body">%1$d need a closer look · %2$d look fine</string>
     <string name="home_section_attention">Worth a look</string>
     <string name="home_section_hint">Sorted by how much they ask for. Tap any app to see why.</string>
     <string name="home_safe_apps">Apps that look fine</string>
     <string name="home_export">Save a copy</string>
     <string name="home_feedback">Tell us what you think</string>
-    <string name="lang_en">EN</string>
-    <string name="lang_bm">BM</string>
+    <string name="lang_en" translatable="false">EN</string>
+    <string name="lang_bm" translatable="false">BM</string>
     <string name="lang_hint">Language</string>
 
     <!-- ===== Empty state ===== -->
@@ -41,17 +41,17 @@
     <string name="empty_cta">See all apps we checked</string>
 
     <!-- ===== Scanning dialog ===== -->
-    <string name="scan_title">Looking through your appsâ€¦</string>
+    <string name="scan_title">Looking through your apps…</string>
     <string name="scan_sub">You can leave this open. It won\'t take long.</string>
     <string name="scan_progress">%1$d of %2$d apps</string>
-    <string name="scan_percent">%1$d%%</string>
+    <string name="scan_percent" translatable="false">%1$d%%</string>
     <string name="scan_now_checking">Checking: %1$s</string>
     <string name="scan_count_attention">Need a look</string>
     <string name="scan_count_fine">Look fine</string>
     <string name="scan_elapsed">%1$d:%2$02d elapsed</string>
     <string name="scan_cancel">Stop</string>
     <string name="scan_cancelled">Check stopped</string>
-    <string name="scan_in_progress">Check in progressâ€¦</string>
+    <string name="scan_in_progress">Check in progress…</string>
 
     <!-- ===== Risk labels: friendly names for the technical ones ===== -->
     <string name="risk_consistent">Looks fine</string>
@@ -74,6 +74,8 @@
     <string name="home_section_count">%1$d apps</string>
     <string name="detail_section_normal">Everything else looks normal</string>
     <string name="detail_normal_count">%1$d normal requests</string>
+    <string name="detail_permissions_settings_unavailable">Android app settings could not be opened.</string>
+    <string name="detail_review_permissions">Review permissions</string>
     <string name="detail_nav_title">App Analysis</string>
     <string name="detail_delete">Remove this app</string>
     <string name="detail_keep">Keep it</string>
@@ -82,8 +84,12 @@
 
     <!-- ===== Delete guidance ===== -->
     <string name="delete_title">Remove %1$s?</string>
-    <string name="delete_body">Android will ask you to confirm on the next screen. Your photos, messages and other apps are not affected. You can always install it again from the Play Store.</string>
-    <string name="delete_confirm">Yes, remove it</string>
+    <string name="delete_body">AppTrap will open this app’s App info page. The app will stay installed until you choose Uninstall and confirm with Android.</string>
+    <string name="delete_step_1">1. On the App info page, tap Uninstall.</string>
+    <string name="delete_step_2">2. Tap Uninstall again if Android asks you to confirm.</string>
+    <string name="delete_step_3">3. If you change your mind, go back without uninstalling.</string>
+    <string name="delete_settings_unavailable">Android app info could not be opened.</string>
+    <string name="delete_confirm">Open app info</string>
     <string name="delete_cancel">Not now</string>
 
     <!-- ===== Safe apps ===== -->
@@ -96,9 +102,23 @@
     <string name="fb_sub">Two questions, then you\'re done. It helps us make this clearer for everyone.</string>
     <string name="fb_q_clear">Was the result easy to understand?</string>
     <string name="fb_q_open">Anything confusing or missing?</string>
-    <string name="fb_hint_open">Type hereâ€¦</string>
+    <string name="fb_hint_open">Type here…</string>
+    <string name="fb_include_results">Include scanned results in the email</string>
+    <string name="fb_include_results_hint">Attaches a short CSV file with scanned app names, risk scores and requested permissions. Leave unticked to send only your feedback.</string>
+    <string name="fb_no_results_hint">No scan results are available to include. Your feedback and device details can still be sent.</string>
+    <string name="fb_guide_title">Before you send</string>
+    <string name="fb_guide_intro">Your email app will open with a draft. Follow these steps to submit your feedback:</string>
+    <string name="fb_guide_step_1">Choose an email app from the menu.</string>
+    <string name="fb_guide_step_2">Review the recipient and message. You can edit or cancel it.</string>
+    <string name="fb_guide_step_3">Tap Send in your email app. AppTrap cannot confirm delivery.</string>
+    <string name="fb_guide_privacy_title">What the draft includes</string>
+    <string name="fb_guide_privacy_without_results">The draft includes your comment and device/AppTrap details. Scanned app data is left out because the option is unticked. Nothing is sent until you tap Send.</string>
+    <string name="fb_guide_privacy_with_results">A CSV file with scanned app names, package names, risk scores and requested permissions will be attached to the email draft. Nothing is sent until you tap Send.</string>
+    <string name="fb_export_failed">Could not prepare the scan results file. Please try again or untick the attachment option.</string>
+    <string name="fb_guide_cancel">Not now</string>
+    <string name="fb_guide_continue">Open email</string>
     <string name="fb_submit">Send</string>
-    <string name="fb_thanks">Thank you. Really.</string>
+    <string name="fb_thanks">To submit, tap Send in your email app.</string>
     <string name="fb_yes">Yes</string>
     <string name="fb_no">No</string>
 

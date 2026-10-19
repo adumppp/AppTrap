@@ -6,17 +6,17 @@
 -->
 <resources>
 
-    <!-- ============ Brand ramp (indigo) ============ -->
-    <color name="indigo_50">#EEF2FF</color>
-    <color name="indigo_100">#E0E7FF</color>
-    <color name="indigo_200">#C7D2FE</color>
-    <color name="indigo_300">#A5B4FC</color>
-    <color name="indigo_400">#818CF8</color>
-    <color name="indigo_500">#4F6CF7</color>
-    <color name="indigo_600">#4055D8</color>
-    <color name="indigo_700">#3342AE</color>
-    <color name="indigo_900">#1B1F3B</color>
-    <color name="indigo_950">#12152B</color>
+    <!-- ============ Brand ramp (muted, deeper blue) ============ -->
+    <color name="indigo_50">#EFF6FF</color>
+    <color name="indigo_100">#DBEAFE</color>
+    <color name="indigo_200">#BFDBFE</color>
+    <color name="indigo_300">#93C5FD</color>
+    <color name="indigo_400">#60A5FA</color>
+    <color name="indigo_500">#2563EB</color>
+    <color name="indigo_600">#1D4ED8</color>
+    <color name="indigo_700">#1E40AF</color>
+    <color name="indigo_900">#1E3A8A</color>
+    <color name="indigo_950">#172554</color>
 
     <!-- ============ Neutrals ============ -->
     <color name="white">#FFFFFF</color>
@@ -24,10 +24,10 @@
     <color name="grey_50">#F4F6FB</color>
     <color name="grey_100">#EAEDF5</color>
     <color name="grey_200">#DDE1EC</color>
-    <color name="grey_400">#98A1B7</color>
-    <color name="grey_600">#5C6579</color>
-    <color name="grey_800">#2C3242</color>
-    <color name="ink">#141826</color>
+    <color name="grey_400">#64748B</color>
+    <color name="grey_600">#475569</color>
+    <color name="grey_800">#1E293B</color>
+    <color name="ink">#111827</color>
 
     <!-- ============ Risk scale (semantic) ============ -->
     <!-- safe / consistent -->
@@ -77,18 +77,18 @@
     <color name="risk_danger_on_container_night">#FCA5A5</color>
 
     <!-- ============ Night brand — exact prototype indigo/slate ============ -->
-    <color name="primary_night">#6366F1</color>
+    <color name="primary_night">#60A5FA</color>
     <color name="on_primary_night">#FFFFFF</color>
-    <color name="primary_container_night">#312E81</color>
-    <color name="on_primary_container_night">#C7D2FE</color>
-    <color name="secondary_night">#818CF8</color>
+    <color name="primary_container_night">#1E3A8A</color>
+    <color name="on_primary_container_night">#DBEAFE</color>
+    <color name="secondary_night">#93C5FD</color>
     <color name="red_600">#DC2626</color>
 
     <!-- ============ Prototype neutral ramp (slate) for direct refs ============ -->
     <color name="slate_100">#F1F5F9</color>
     <color name="slate_200">#E2E8F0</color>
-    <color name="slate_300">#CBD5E1</color>
-    <color name="slate_400">#94A3B8</color>
+    <color name="slate_300">#334155</color>
+    <color name="slate_400">#475569</color>
     <color name="slate_500">#64748B</color>
     <color name="slate_600">#475569</color>
     <color name="slate_700">#334155</color>
@@ -96,18 +96,14 @@
     <color name="slate_900">#0F172A</color>
     <color name="slate_950">#020617</color>
     <color name="dist_bar_stroke">#80334155</color>
-    <!-- ============ Hero "deep indigo" tokens (prototype: indigo-900 → indigo-950 → slate-900).
-         Fixed, not theme-switched: they only ever sit on the indigo hero card. ============ -->
-    <color name="hero_gradient_start">#312E81</color>
-    <color name="hero_gradient_mid">#1E1B4B</color>
-    <color name="hero_gradient_end">#0F172A</color>
-    <!-- Translucent chip that holds the breathing shield (indigo-600 @ 30% + indigo-400 @ 40%). -->
-    <color name="hero_chip_fill">#4D6366F1</color>
-    <color name="hero_chip_stroke">#66818CF8</color>
-    <!-- Soft corner glow behind the hero (indigo-400 @ 18% fading to transparent). -->
-    <color name="hero_orb_glow">#2E818CF8</color>
-    <color name="hero_orb_fade">#00818CF8</color>
-    <!-- Hairline border on the primary CTA (prototype: border-indigo-400/30). -->
-    <color name="btn_primary_stroke">#4D818CF8</color>
+    <!-- ============ Light hero in the logo's cyan/teal palette ============ -->
+    <color name="hero_gradient_start">#DBEAFE</color>
+    <color name="hero_gradient_mid">#EFF6FF</color>
+    <color name="hero_gradient_end">#F8FAFC</color>
+    <color name="hero_chip_fill">#BFFFFFFF</color>
+    <color name="hero_chip_stroke">#8060A5FA</color>
+    <color name="hero_orb_glow">#4060A5FA</color>
+    <color name="hero_orb_fade">#0060A5FA</color>
+    <color name="btn_primary_stroke">#8060A5FA</color>
 
 </resources>
